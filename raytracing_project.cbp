@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="raytracing_project" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/carré" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="C:/Program Files (x86)/CodeBlocks/MinGW/bin" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/carré" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="C:/Program Files (x86)/CodeBlocks/MinGW/bin" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/include" />
+		</Compiler>
+		<Linker>
+			<Add library="glut32" />
+			<Add library="opengl32" />
+			<Add library="glu32" />
+			<Add library="winmm" />
+			<Add library="gdi32" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/lib" />
+		</Linker>
+		<Unit filename="include/HPoint.h" />
+		<Unit filename="include/HRay.h" />
+		<Unit filename="include/HVector.h" />
+		<Unit filename="include/Matrix.h" />
+		<Unit filename="include/Point.h" />
+		<Unit filename="include/Ray.h" />
+		<Unit filename="include/Vector.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/HPoint.cpp" />
+		<Unit filename="src/HRay.cpp" />
+		<Unit filename="src/HVector.cpp" />
+		<Unit filename="src/Matrix.cpp" />
+		<Unit filename="src/Point.cpp" />
+		<Unit filename="src/Ray.cpp" />
+		<Unit filename="src/Vector.cpp" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
