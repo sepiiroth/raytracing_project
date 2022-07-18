@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+obj/Debug/src/Vector.o
+obj/Debug/src/Vector.o
+obj/Debug/src/Ray.o
+obj/Debug/src/Point.o
+*.o
+*.o
+bin/Debug/carré.exe
