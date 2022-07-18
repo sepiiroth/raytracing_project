@@ -1,5 +1,6 @@
 #include<stdlib.h>
 #include<stdio.h>
+#include<iostream>
 #include<math.h>
 #include"Point.h"
 #include"Vector.h"
@@ -8,7 +9,10 @@
 #include"HVector.h"
 #include"HRay.h"
 #include"Matrix.h"
+#include"Application.h"
+#include <SDL2/SDL.h>
 
+using namespace std;
 
 int main(int argc, char **argv) {
     Matrix m;
@@ -50,5 +54,31 @@ int main(int argc, char **argv) {
     for(int i = 0; i < 3; i++) {
         printf("%f ", result[i]);
     }
+
+    if ( SDL_Init(SDL_INIT_VIDEO) < 0 )
+    {
+        fprintf(stderr, "Impossible d'initialiser SDL: %sn", SDL_GetError());
+        exit(1);
+    }
+
+    Application app = Application(600, 600);
+
+    app.initSDL();
+
+	while (1)
+	{
+		app.prepareScene();
+
+		app.doInput();
+
+		app.presentScene();
+
+		SDL_Delay(16);
+	}
+
+
+    atexit(SDL_Quit);
+
+    cout << "Tets";
     return 0;
 }

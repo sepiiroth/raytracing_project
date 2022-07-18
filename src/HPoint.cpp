@@ -12,6 +12,14 @@ HPoint::HPoint() {
     this->m_w = 1;
 }
 
+HPoint::HPoint(const Point& p)
+{
+    this->m_x = p[0];
+    this->m_y = p[1];
+    this->m_z = p[2];
+    this->m_w = 1;
+}
+
 HPoint::HPoint(float x, float y, float z) {
     this->m_x = x;
     this->m_y = y;

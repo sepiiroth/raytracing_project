@@ -22,7 +22,7 @@ class Point {
         Point operator/(float value);
         Point &operator/=(float value);
         Point &operator=(const Point &p);
-        float operator[](int value);
+        float operator[](int value) const;
         Point operator-();
         float dot(const Point &p);
         float distanceTo(const Point& B);
