@@ -101,6 +101,14 @@ Vector &Vector::operator=(const Vector &vec) {
     return *this;
 }
 
+Vector &Vector::operator=(const Point &point) {
+    this->m_x = point[0];
+    this->m_y = point[1];
+    this->m_z = point[2];
+    return *this;
+}
+
+
 float Vector::operator[](int value) const{
     switch(value) {
         case 0:

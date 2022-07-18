@@ -51,6 +51,7 @@
 			<Add directory="C:/Users/Raf/Documents/Projet 4A3DJV/RAYTRACING_PROJECT/raytracing_project/lib/SDL/lib" />
 		</Linker>
 		<Unit filename="include/Application.h" />
+		<Unit filename="include/Camera.h" />
 		<Unit filename="include/Entity.h" />
 		<Unit filename="include/HPoint.h" />
 		<Unit filename="include/HRay.h" />
@@ -64,6 +65,7 @@
 		<Unit filename="include/Vector.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Application.cpp" />
+		<Unit filename="src/Camera.cpp" />
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/HPoint.cpp" />
 		<Unit filename="src/HRay.cpp" />

@@ -65,7 +65,7 @@
 1658074547 source:c:\users\raf\documents\projet 4a3djv\projet_raytracing\src\matrix.cpp
 	"Matrix.h"
 
-1658154227 source:c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\main.cpp
+1658154372 source:c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\main.cpp
 	<stdlib.h>
 	<stdio.h>
 	<iostream>
@@ -93,9 +93,10 @@
 	"HRay.h"
 	"Matrix.h"
 
-1658154226 c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\include\point.h
+1658156224 c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\include\point.h
 
-1658154226 c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\include\vector.h
+1658156325 c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\include\vector.h
+	"Point.h"
 
 1658154226 c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\include\ray.h
 	"Vector.h"
@@ -110,19 +111,27 @@
 	"HVector.h"
 	"HPoint.h"
 
-1658154226 c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\include\matrix.h
+1658154372 c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\include\matrix.h
 	<iostream>
 	"HPoint.h"
 	"Point.h"
 	"Vector.h"
 	"HVector.h"
 
-1658145623 source:c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\src\entity.cpp
+1658155820 source:c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\src\entity.cpp
 	"Entity.h"
+	<math.h>
 
-1658145623 c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\include\entity.h
+1658155780 c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\include\entity.h
+	"Point.h"
+	"Matrix.h"
+	"HPoint.h"
+	"Vector.h"
+	"HVector.h"
+	"Ray.h"
+	"HRay.h"
 
-1658154227 source:c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\src\hpoint.cpp
+1658154372 source:c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\src\hpoint.cpp
 	"HPoint.h"
 	<iostream>
 	<math.h>
@@ -131,13 +140,13 @@
 1658145360 source:c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\src\hray.cpp
 	"HRay.h"
 
-1658154227 source:c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\src\hvector.cpp
+1658154372 source:c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\src\hvector.cpp
 	"HVector.h"
 	<iostream>
 	<math.h>
 	<assert.h>
 
-1658154227 source:c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\src\matrix.cpp
+1658154372 source:c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\src\matrix.cpp
 	"Matrix.h"
 
 1658154227 source:c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\src\point.cpp
@@ -151,7 +160,7 @@
 	<iostream>
 	<math.h>
 
-1658154227 source:c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\src\vector.cpp
+1658156535 source:c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\src\vector.cpp
 	"Vector.h"
 	<iostream>
 	<math.h>
@@ -978,4 +987,11 @@
 	<math.h>
 	<limits.h>
 	<vector>
+
+1658156494 source:c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\src\camera.cpp
+	"Camera.h"
+
+1658156146 c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\include\camera.h
+	"Entity.h"
+	"Ray.h"
 
