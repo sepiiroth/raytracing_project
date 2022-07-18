@@ -2,7 +2,8 @@
 #define APPLICATION_H
 #include <SDL2/SDL.h>
 #include <iostream>
-
+#include "Camera.h"
+#include "Scene.h"
 
 class Application
 {
@@ -13,6 +14,9 @@ class Application
 
         SDL_Renderer *renderer;
         SDL_Window *window;
+
+        Camera *camera;
+        Scene *scene;
 
         int screen_width, screen_height;
 

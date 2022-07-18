@@ -18,6 +18,14 @@ class Entity {
         void rotateY(float deg);
         void rotateZ(float deg);
         void scale(float factor);
+
+        Point globalToLocal(const Point& p) const;
+        Ray globalToLocal(const Ray& r) const;
+        Vector globalToLocal(const Vector v) const;
+
+        Point localToGlobal(const Point& p) const;
+        Ray localToGlobal(const Ray& r) const;
+        Vector localToGlobal(const Vector v) const;
 };
 
 #endif // ENTITY_H

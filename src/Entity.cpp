@@ -1,7 +1,18 @@
 #include "Entity.h"
 #include <math.h>
 
-Entity::Entity() {}
+Entity::Entity() {
+    this->trans = Matrix(4,4);
+    trans(0,0) = 1.f;
+    trans(1,1) = 1.f;
+    trans(2,2) = 1.f;
+    trans(3,3) = 1.f;
+    this->transInv = Matrix(4,4);
+    transInv(0,0) = 1.f;
+    transInv(1,1) = 1.f;
+    transInv(2,2) = 1.f;
+    transInv(3,3) = 1.f;
+}
 
 void Entity::translate(float x, float y, float z){
 		Matrix m;
@@ -54,19 +65,38 @@ void Entity::scale(float factor){
 	//transInv = trans.inverse();
 }
 
-/*Point Entity::localToGlobal(const Point& p) const {
-    HPoint hpoint(p);
-
-	return transInv*hpoint;
+Point Entity::globalToLocal(const Point& p) const
+{
+    HPoint temp(p);
+    Point point = this->trans * temp;
+    cout << "\n" << point[0] << ", " << point[1] << ", " << point[2] << endl;
+	return point;
 }
 
-Vector Entity::localToGlobal(const Vector& v) const {
-    HVector hpoint(v);
+Ray Entity::globalToLocal(const Ray& r) const{
+    HRay temp(r);
+  	return Ray(trans*temp.origin, trans*temp.vec);
 
-	return transInv*hpoint;
 }
 
-Ray Entity::localToGlobal(const Ray& r) const {
-    HRay hray(r);
-  	return Ray(transInv*hray.origin, transInv*hray.vec);
-}*/
+Vector Entity::globalToLocal(const Vector v) const{
+    HVector temp(v);
+	return trans*temp;
+}
+
+Point Entity::localToGlobal(const Point& p) const{
+    HPoint temp(p);
+	return transInv*temp;
+}
+
+Ray Entity::localToGlobal(const Ray& r) const{
+    HRay temp(r);
+
+  	return Ray(transInv*temp.origin, transInv*temp.vec);
+
+}
+
+Vector Entity::localToGlobal(const Vector v) const{
+    HVector temp(v);
+	return transInv*temp;
+}

@@ -98,7 +98,7 @@ Point Matrix::operator*(HPoint p) const{
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
             num = 0;
-            for (int k = 0; k < 4; k++) {
+            for (int k = 0; k < 3; k++) {
                 num += (*this)(j, k) * p[k];
             }
             switch(j) {
@@ -123,7 +123,7 @@ Vector Matrix::operator*(HVector v) const{
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
             num = 0;
-            for (int k = 0; k < 4; k++) {
+            for (int k = 0; k < 3; k++) {
                 num += (*this)(j, k) * v[k];
             }
             switch(j) {

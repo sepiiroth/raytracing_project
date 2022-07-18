@@ -16,7 +16,7 @@ HVector::HVector(const Vector& v)
 {
     this->m_x = v[0];
     this->m_y = v[1];
-    this->m_z = v[3];
+    this->m_z = v[2];
     this->m_w = 0;
 }
 
