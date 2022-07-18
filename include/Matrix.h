@@ -1,6 +1,11 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 #include <iostream>
+#include "HPoint.h"
+#include "Point.h"
+#include "Vector.h"
+
+#include "HVector.h"
 using namespace std;
 
 
@@ -22,16 +27,13 @@ class Matrix {
         float& operator()(int i,int j);
         float operator[](int index) const;
         float operator()(int i,int j) const;
+        Matrix operator*(Matrix m);
+        Point operator*(HPoint p);
+        Vector operator*(HVector v);
         float& at(int index);
         float& at(int i,int j);
         float at(int index) const;
         float at(int i,int j) const;
-        Matrix createIdentity(int size);
-        Matrix augment(Matrix A, Matrix B);
-        void swapRows(int r1, int r2);
-        Matrix gaussianEliminate();
-        Matrix rowReduceFromGaussian();
-        Matrix inverse();
         virtual ~Matrix();
 };
 

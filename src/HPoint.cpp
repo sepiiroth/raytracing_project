@@ -107,6 +107,9 @@ float HPoint::operator[](int value) {
         case 2:
             return this->m_z;
             break;
+        case 3:
+            return this->m_w;
+            break;
         default:
             printf("Erreur lors de la lecture de la coordonnee d'un HPoint\n");
             return -1;
