@@ -25,7 +25,7 @@ class Vector {
         Vector operator/(float value);
         Vector &operator/=(float value);
         Vector &operator=(const Vector &vec);
-        float operator[](int value);
+        float operator[](int value) const;
         Vector operator-();
         float dot(const Vector &vec);
         float norm();

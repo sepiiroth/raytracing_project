@@ -101,7 +101,7 @@ Vector &Vector::operator=(const Vector &vec) {
     return *this;
 }
 
-float Vector::operator[](int value) {
+float Vector::operator[](int value) const{
     switch(value) {
         case 0:
             return this->m_x;

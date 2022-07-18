@@ -1,5 +1,6 @@
 #ifndef HPOINT_H
 #define HPOINT_H
+#include "Point.h"
 
 class HPoint {
     private:
@@ -9,6 +10,7 @@ class HPoint {
         float getZ() const;
     public:
         HPoint();
+        HPoint(const Point& p);
         HPoint(float x, float y, float z);
         void setX(float x);
         void setY(float y);

@@ -35,31 +35,43 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/include" />
+			<Add directory="G:/Cours/CPP/raytracing_project/lib/SDL/include" />
+			<Add directory="G:/Cours/CPP/raytracing_project/include" />
 		</Compiler>
 		<Linker>
+			<Add option="-lmingw32 -lSDL2main -lSDL2" />
 			<Add library="glut32" />
 			<Add library="opengl32" />
 			<Add library="glu32" />
 			<Add library="winmm" />
 			<Add library="gdi32" />
 			<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/lib" />
+			<Add directory="G:/Cours/CPP/raytracing_project/lib/SDL/lib" />
 		</Linker>
+		<Unit filename="include/Application.h" />
 		<Unit filename="include/Entity.h" />
 		<Unit filename="include/HPoint.h" />
 		<Unit filename="include/HRay.h" />
 		<Unit filename="include/HVector.h" />
+		<Unit filename="include/Light.h" />
 		<Unit filename="include/Matrix.h" />
+		<Unit filename="include/Object.h" />
 		<Unit filename="include/Point.h" />
 		<Unit filename="include/Ray.h" />
+		<Unit filename="include/Scene.h" />
 		<Unit filename="include/Vector.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Application.cpp" />
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/HPoint.cpp" />
 		<Unit filename="src/HRay.cpp" />
 		<Unit filename="src/HVector.cpp" />
+		<Unit filename="src/Light.cpp" />
 		<Unit filename="src/Matrix.cpp" />
+		<Unit filename="src/Object.cpp" />
 		<Unit filename="src/Point.cpp" />
 		<Unit filename="src/Ray.cpp" />
+		<Unit filename="src/Scene.cpp" />
 		<Unit filename="src/Vector.cpp" />
 		<Extensions />
 	</Project>

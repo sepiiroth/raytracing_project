@@ -93,7 +93,7 @@ Point &Point::operator=(const Point &p) {
     return *this;
 }
 
-float Point::operator[](int value) {
+float Point::operator[](int value) const{
     switch(value) {
         case 0:
             return this->m_x;
