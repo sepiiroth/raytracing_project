@@ -19,13 +19,13 @@ class Object
         Ray getNormal(const Point& p, const Point& o) const;
         bool intersect(const Ray& ray, Point& impact) const;
 
-        Point globalToLocal(const Point& p) const;
+        /*Point globalToLocal(const Point& p) const;
         Ray globalToLocal(const Ray& r) const;
         Vector globalToLocal(const Vector v) const;
 
         Point localToGlobal(const Point& p) const;
         Ray localToGlobal(const Ray& r) const;
-        Vector localToGlobal(const Vector v) const;
+        Vector localToGlobal(const Vector v) const;*/
 
     protected:
 

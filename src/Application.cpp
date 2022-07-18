@@ -73,6 +73,14 @@ void Application::prepareScene()
 	SDL_RenderClear(this->renderer);
 	SDL_SetRenderDrawColor(this->renderer, 255, 128, 96, 255);
 
+	for(int y = 0; y < this->screen_height; y++)
+    {
+        for(int x = 0; x < this->screen_width; x++)
+        {
+
+        }
+    }
+
 }
 
 void Application::presentScene()

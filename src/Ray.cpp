@@ -11,3 +11,13 @@ Ray::Ray(Point p, Vector v) {
     this->origin = p;
     this->vec = v;
 }
+
+Point Ray::getOrigin() const
+{
+    return this->origin;
+}
+
+Vector Ray::getVector() const
+{
+    return this->vec;
+}

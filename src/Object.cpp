@@ -16,8 +16,8 @@ bool Object::intersect(const Ray& ray, Point& impact) const
 {
 
     float oLocal, vLocal;
-    oLocal = globalToLocal(ray.origin)[2];
-    vLocal = globalToLocal(ray.vec)[2];
+    oLocal = /*globalToLocal*/(ray.origin)[2];
+    vLocal = /*globalToLocal*/(ray.vec)[2];
 
     float t = -(oLocal/vLocal);
 
@@ -34,7 +34,7 @@ bool Object::intersect(const Ray& ray, Point& impact) const
 
         Point temp = Point(ox + t * vx, oy + t * vy, oz + t * vz);
 
-        if(globalToLocal(temp)[0] <= 1 && globalToLocal(temp)[0] >= -1 && globalToLocal(temp)[1] <= 1 && globalToLocal(temp)[1] >= -1)
+        if((temp)[0] <= 1 && (temp)[0] >= -1 && (temp)[1] <= 1 && (temp)[1] >= -1)
         {
             impact = temp;
             return true;
@@ -46,7 +46,7 @@ bool Object::intersect(const Ray& ray, Point& impact) const
     return false;
 }
 
-Point Object::globalToLocal(const Point& p) const
+/*Point Object::globalToLocal(const Point& p) const
 {
     HPoint temp(p);
 	return trans*temp;
@@ -77,4 +77,4 @@ Ray Object::localToGlobal(const Ray& r) const{
 Vector Object::localToGlobal(const Vector v) const{
     HVector temp(v);
 	return transInv*temp;
-}
+}*/

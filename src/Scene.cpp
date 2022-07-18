@@ -33,7 +33,7 @@ Object* Scene::closer_intersected(const Ray& ray, Point& impact) const
     {
         if(this->objects[i]->intersect(ray, impactTemp))
         {
-            float tempDistance = ray.origin->distanceTo(impactTemp);
+            float tempDistance = ray.getOrigin().distanceTo(impactTemp);
             if( tempDistance < minDistance)
             {
                 minDistance = tempDistance;
