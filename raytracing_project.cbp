@@ -44,6 +44,7 @@
 			<Add library="gdi32" />
 			<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/lib" />
 		</Linker>
+		<Unit filename="include/Entity.h" />
 		<Unit filename="include/HPoint.h" />
 		<Unit filename="include/HRay.h" />
 		<Unit filename="include/HVector.h" />
@@ -52,6 +53,7 @@
 		<Unit filename="include/Ray.h" />
 		<Unit filename="include/Vector.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/HPoint.cpp" />
 		<Unit filename="src/HRay.cpp" />
 		<Unit filename="src/HVector.cpp" />
