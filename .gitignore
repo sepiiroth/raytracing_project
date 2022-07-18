@@ -37,3 +37,5 @@ obj/Debug/src/Point.o
 *.o
 *.o
 bin/Debug/carré.exe
+*.o
+bin/Debug/carré.exe
