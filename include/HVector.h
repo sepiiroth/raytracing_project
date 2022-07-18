@@ -1,5 +1,6 @@
 #ifndef HVECTOR_H
 #define HVECTOR_H
+#include "Vector.h"
 
 
 class HVector {
@@ -11,6 +12,7 @@ class HVector {
         float square();
     public:
         HVector();
+        HVector(const Vector& v);
         HVector(float x, float y, float z = 0);
         HVector(const HVector &vec);
         void setX(float x);

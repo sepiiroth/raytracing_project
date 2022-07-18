@@ -92,7 +92,7 @@ Matrix Matrix::operator*(Matrix m) {
     return c;
 }
 
-Point Matrix::operator*(HPoint p) {
+Point Matrix::operator*(HPoint p) const{
     Point point;
     float num = 0;
     for (int i = 0; i < 4; i++) {
@@ -117,7 +117,7 @@ Point Matrix::operator*(HPoint p) {
     return point;
 }
 
-Vector Matrix::operator*(HVector v) {
+Vector Matrix::operator*(HVector v) const{
     Vector vec;
     float num = 0;
     for (int i = 0; i < 4; i++) {

@@ -28,8 +28,8 @@ class Matrix {
         float operator[](int index) const;
         float operator()(int i,int j) const;
         Matrix operator*(Matrix m);
-        Point operator*(HPoint p);
-        Vector operator*(HVector v);
+        Point operator*(HPoint p) const;
+        Vector operator*(HVector v) const;
         float& at(int index);
         float& at(int i,int j);
         float at(int index) const;
