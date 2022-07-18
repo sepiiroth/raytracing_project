@@ -33,26 +33,30 @@ int main(int argc, char **argv) {
 	m(3, 2) = 1;
 	m(3, 3) = -1;
 	Matrix m1;
-	m1(0, 0) = -1;
-	m1(0 ,1) = 1;
+	m1(0, 0) = 1;
+	m1(0 ,1) = 0;
 	m1(0 ,2) = 0;
 	m1(0 ,3) = 1;
-	m1(1, 0) = 1;
-	m1(1, 1) = -1;
+	m1(1, 0) = 0;
+	m1(1, 1) = 1;
 	m1(1, 2) = 0;
 	m1(1, 3) = 1;
-	m1(2, 0) = -1;
-	m1(2, 1) = 1;
-	m1(2, 2) = -2;
+	m1(2, 0) = 0;
+	m1(2, 1) = 0;
+	m1(2, 2) = 1;
 	m1(2, 3) = 1;
-	m1(3, 0) = 1;
-	m1(3, 1) = 1;
+	m1(2, 3) = 1;
+	m1(3, 0) = 0;
+	m1(3, 1) = 0;
 	m1(3, 2) = 0;
-	m1(3, 3) = -1;
+	m1(3, 3) = 1;
 	HVector vec(1, 2, 3);
-    Vector result = m * vec;
-    for(int i = 0; i < 3; i++) {
-        printf("%f ", result[i]);
+    Matrix result = m1.inverse();
+    for(int i = 0; i < 4; i++) {
+        for(int j = 0; j < 4; j++) {
+            printf("%f ", result(i, j));
+        }
+        printf("\n");
     }
 
     if ( SDL_Init(SDL_INIT_VIDEO) < 0 )

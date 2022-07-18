@@ -34,6 +34,7 @@ class Matrix {
         float& at(int i,int j);
         float at(int index) const;
         float at(int i,int j) const;
+        Matrix inverse();
         virtual ~Matrix();
 };
 
