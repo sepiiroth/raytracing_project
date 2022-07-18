@@ -12,6 +12,14 @@ HVector::HVector() {
     this->m_w = 0;
 }
 
+HVector::HVector(const Vector& v)
+{
+    this->m_x = v[0];
+    this->m_y = v[1];
+    this->m_z = v[3];
+    this->m_w = 0;
+}
+
 HVector::HVector(float x, float y, float z) {
     this->m_x = x;
     this->m_y = y;

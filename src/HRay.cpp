@@ -10,3 +10,9 @@ HRay::HRay(HPoint p, HVector v) {
     this->vec = v;
 }
 
+HRay::HRay(const Ray& r)
+{
+    this->origin = r.getOrigin();
+    this->vec = r.getVector();
+}
+
