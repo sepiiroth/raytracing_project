@@ -37,6 +37,7 @@
 			<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/include" />
 			<Add directory="G:/Cours/CPP/raytracing_project/lib/SDL/include" />
 			<Add directory="G:/Cours/CPP/raytracing_project/include" />
+			<Add directory="C:/Users/Raf/Documents/Projet 4A3DJV/RAYTRACING_PROJECT/raytracing_project/lib/SDL/include" />
 		</Compiler>
 		<Linker>
 			<Add option="-lmingw32 -lSDL2main -lSDL2" />
@@ -47,6 +48,7 @@
 			<Add library="gdi32" />
 			<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/lib" />
 			<Add directory="G:/Cours/CPP/raytracing_project/lib/SDL/lib" />
+			<Add directory="C:/Users/Raf/Documents/Projet 4A3DJV/RAYTRACING_PROJECT/raytracing_project/lib/SDL/lib" />
 		</Linker>
 		<Unit filename="include/Application.h" />
 		<Unit filename="include/Entity.h" />
