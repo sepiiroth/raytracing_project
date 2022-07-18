@@ -23,6 +23,12 @@ Vector::Vector(const Vector &vec) {
     this->m_z = vec.getZ();
 }
 
+Vector::Vector(const Point &p) {
+    this->m_x = p[0];
+    this->m_y = p[1];
+    this->m_z = p[2];
+}
+
 float Vector::getX() const {
     return this->m_x;
 }

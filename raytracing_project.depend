@@ -172,7 +172,8 @@
 
 1658148197 g:\cours\cpp\raytracing_project\include\point.h
 
-1658148218 g:\cours\cpp\raytracing_project\include\vector.h
+1658157957 g:\cours\cpp\raytracing_project\include\vector.h
+	"Point.h"
 
 1658152445 g:\cours\cpp\raytracing_project\include\ray.h
 	"Vector.h"
@@ -205,13 +206,13 @@
 1658154885 source:g:\cours\cpp\raytracing_project\src\hray.cpp
 	"HRay.h"
 
-1658154826 source:g:\cours\cpp\raytracing_project\src\hvector.cpp
+1658159091 source:g:\cours\cpp\raytracing_project\src\hvector.cpp
 	"HVector.h"
 	<iostream>
 	<math.h>
 	<assert.h>
 
-1658155757 source:g:\cours\cpp\raytracing_project\src\matrix.cpp
+1658157710 source:g:\cours\cpp\raytracing_project\src\matrix.cpp
 	"Matrix.h"
 
 1658148203 source:g:\cours\cpp\raytracing_project\src\point.cpp
@@ -225,16 +226,24 @@
 	<iostream>
 	<math.h>
 
-1658148225 source:g:\cours\cpp\raytracing_project\src\vector.cpp
+1658159990 source:g:\cours\cpp\raytracing_project\src\vector.cpp
 	"Vector.h"
 	<iostream>
 	<math.h>
 	<assert.h>
 
-1658145663 source:g:\cours\cpp\raytracing_project\src\entity.cpp
+1658161294 source:g:\cours\cpp\raytracing_project\src\entity.cpp
 	"Entity.h"
+	<math.h>
 
-1658145663 g:\cours\cpp\raytracing_project\include\entity.h
+1658156970 g:\cours\cpp\raytracing_project\include\entity.h
+	"Point.h"
+	"Matrix.h"
+	"HPoint.h"
+	"Vector.h"
+	"HVector.h"
+	"Ray.h"
+	"HRay.h"
 
 1541002144 g:\cours\cpp\raytracing_project\lib\sdl\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -578,12 +587,14 @@
 	"begin_code.h"
 	"close_code.h"
 
-1658153192 source:g:\cours\cpp\raytracing_project\src\application.cpp
+1658160565 source:g:\cours\cpp\raytracing_project\src\application.cpp
 	"../include/Application.h"
 
-1658146788 g:\cours\cpp\raytracing_project\include\application.h
+1658157436 g:\cours\cpp\raytracing_project\include\application.h
 	<SDL2/SDL.h>
 	<iostream>
+	"Camera.h"
+	"Scene.h"
 
 1658147997 source:g:\cours\cpp\raytracing_project\src\light.cpp
 	"../include/Light.h"
@@ -593,10 +604,10 @@
 	"Ray.h"
 	"Vector.h"
 
-1658155533 source:g:\cours\cpp\raytracing_project\src\object.cpp
+1658160658 source:g:\cours\cpp\raytracing_project\src\object.cpp
 	"../include/Object.h"
 
-1658155529 g:\cours\cpp\raytracing_project\include\object.h
+1658160246 g:\cours\cpp\raytracing_project\include\object.h
 	"Point.h"
 	"HPoint.h"
 	"Ray.h"
@@ -604,8 +615,9 @@
 	"Vector.h"
 	"HVector.h"
 	"Matrix.h"
+	"Entity.h"
 
-1658152512 source:g:\cours\cpp\raytracing_project\src\scene.cpp
+1658159196 source:g:\cours\cpp\raytracing_project\src\scene.cpp
 	"../include/Scene.h"
 
 1658147501 g:\cours\cpp\raytracing_project\include\scene.h
@@ -1002,6 +1014,13 @@
 	"Camera.h"
 
 1658156735 c:\users\raf\documents\projet 4a3djv\raytracing_project\raytracing_project\include\camera.h
+	"Entity.h"
+	"Ray.h"
+
+1658160766 source:g:\cours\cpp\raytracing_project\src\camera.cpp
+	"Camera.h"
+
+1658156780 g:\cours\cpp\raytracing_project\include\camera.h
 	"Entity.h"
 	"Ray.h"
 

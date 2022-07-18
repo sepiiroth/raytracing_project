@@ -2,13 +2,18 @@
 
 Application::Application()
 {
-    //ctor
+    this->screen_width = 600;
+    this->screen_height = 600;
+    this->camera = new Camera();
+    this->scene = new Scene();
 }
 
 Application::Application(int w, int h)
 {
     this->screen_width = w;
     this->screen_height = h;
+    this->camera = new Camera();
+    this->scene = new Scene();
 }
 
 Application::~Application()
@@ -73,11 +78,21 @@ void Application::prepareScene()
 	SDL_RenderClear(this->renderer);
 	SDL_SetRenderDrawColor(this->renderer, 255, 128, 96, 255);
 
-	for(int y = 0; y < this->screen_height; y++)
+	for(float y = 0; y < this->screen_height; y++)
     {
-        for(int x = 0; x < this->screen_width; x++)
+        for(float x = 0; x < this->screen_width; x++)
         {
+            Ray ray = camera->getRay(x / this->screen_width, y/this->screen_height);
+            Point impact;
+            auto inter = scene->objects[0]->intersect(ray, impact);
 
+            if(inter)
+            {
+                SDL_SetRenderDrawColor(this->renderer, 255,0,0, 255 );
+            }else{
+                SDL_SetRenderDrawColor(this->renderer, 96, 128, 255, 255);
+            }
+            SDL_RenderDrawPoint(this->renderer, x, y);
         }
     }
 

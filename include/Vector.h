@@ -13,6 +13,7 @@ class Vector {
         Vector();
         Vector(float x, float y, float z = 0);
         Vector(const Vector &vec);
+        Vector(const Point &p);
         void setX(float x);
         void setY(float y);
         void setZ(float z);

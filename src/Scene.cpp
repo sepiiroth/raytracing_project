@@ -6,6 +6,7 @@ Scene::Scene()
 {
     this->lights = vector<Light>();
     this->objects = vector<Object*>();
+    objects.push_back(new Object());
 }
 
 Scene::~Scene()

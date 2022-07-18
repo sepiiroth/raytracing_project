@@ -3,8 +3,7 @@
 Object::Object()
 {
     this->texcoords = Point();
-    this->trans = Matrix(4,4);
-    this->transInv = Matrix(4,4);
+
 }
 
 Object::~Object()
@@ -20,6 +19,7 @@ bool Object::intersect(const Ray& ray, Point& impact) const
     vLocal = globalToLocal(ray.vec)[2];
 
     float t = -(oLocal/vLocal);
+    cout << oLocal << " " << vLocal << " = " << t << endl;
 
     if(t>0)
     {
@@ -33,6 +33,7 @@ bool Object::intersect(const Ray& ray, Point& impact) const
         vz = ray.vec[2];
 
         Point temp = Point(ox + t * vx, oy + t * vy, oz + t * vz);
+        //cout << "\n" << temp[0] << ", " << temp[1] << ", " << temp[2] << endl;
 
         if(globalToLocal(temp)[0] <= 1 && globalToLocal(temp)[0] >= -1 && globalToLocal(temp)[1] <= 1 && globalToLocal(temp)[1] >= -1)
         {
@@ -44,38 +45,4 @@ bool Object::intersect(const Ray& ray, Point& impact) const
     }
 
     return false;
-}
-
-Point Object::globalToLocal(const Point& p) const
-{
-    HPoint temp(p);
-    Point point = this->trans * temp;
-	return point;
-}
-
-Ray Object::globalToLocal(const Ray& r) const{
-    HRay temp(r);
-  	return Ray(trans*temp.origin, trans*temp.vec);
-
-}
-
-Vector Object::globalToLocal(const Vector v) const{
-    HVector temp(v);
-	return trans*temp;
-}
-
-Point Object::localToGlobal(const Point& p) const{
-    HPoint temp(p);
-	return transInv*temp;
-}
-
-Ray Object::localToGlobal(const Ray& r) const{
-    HRay temp(r);
-  	return Ray(transInv*temp.origin, transInv*temp.vec);
-
-}
-
-Vector Object::localToGlobal(const Vector v) const{
-    HVector temp(v);
-	return transInv*temp;
 }
