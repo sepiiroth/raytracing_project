@@ -1,12 +1,13 @@
 #ifndef SCENE_H
 #define SCENE_H
+#include <math.h>
+#include <limits.h>
+#include <vector>
 #include "Light.h"
 #include "Object.h"
 #include "Point.h"
 #include "Ray.h"
-#include <math.h>
-#include <limits.h>
-#include <vector>
+
 
 using namespace std;
 
@@ -19,7 +20,7 @@ class Scene
         //Color backgroundColor;
         //Color ambiantColor;
 
-        vector<Light> lights;
+        vector<Light*> lights;
         vector<Object*> objects;
 
       //  Color getBackground() const;

@@ -3,13 +3,14 @@
 #include "Point.h"
 #include "Ray.h"
 #include "Vector.h"
+#include "Color.h"
 
 using namespace std;
 
 class Light {
     private:
-
     public:
+        Color id, is;
         Ray getRayToLight(const Point& p)const;
         Ray getRayFromLight(const Point& p)const;
         Vector getVectorToLight(const Point& p)const;

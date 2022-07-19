@@ -142,7 +142,7 @@ float Point::operator[](int value) const{
     }
 }*/
 
-Point Point::operator-() {
+Point Point::operator-() const{
     return Point(-(this->m_x), -(this->m_y), -(this->m_z));
 }
 

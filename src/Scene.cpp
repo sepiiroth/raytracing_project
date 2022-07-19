@@ -4,7 +4,7 @@ using namespace std;
 
 Scene::Scene()
 {
-    this->lights = vector<Light>();
+    this->lights = vector<Light*>();
     this->objects = vector<Object*>();
     objects.push_back(new Object());
 }
@@ -20,7 +20,7 @@ int Scene::nbLights() const{
 
 const Light* Scene::getLight(int index) const
 {
-    return &(this->lights[index]);
+    return this->lights[index];
 }
 
 Object* Scene::closer_intersected(const Ray& ray, Point& impact) const
