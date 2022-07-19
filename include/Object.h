@@ -8,6 +8,7 @@
 #include "HVector.h"
 #include "Matrix.h"
 #include "Entity.h"
+#include "Material.h"
 
 class Object : public Entity
 {
@@ -16,7 +17,7 @@ class Object : public Entity
         virtual ~Object();
 
         Point getTextureCoordinates(const Point& p) const;
-        //Material getMaterial(const Point& p) const;
+        Material getMaterial(const Point& p) const;
         Ray getNormal(const Point& p, const Point& o) const;
         bool intersect(const Ray& ray, Point& impact) const;
 
