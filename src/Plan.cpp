@@ -1,11 +1,5 @@
 #include "Plan.h"
 
-Plan::Plan()
-{
-    //ctor
-}
+Plan::Plan() {
 
-Plan::~Plan()
-{
-    //dtor
 }

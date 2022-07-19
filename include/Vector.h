@@ -27,6 +27,8 @@ class Vector {
         Vector &operator/=(float value);
         Vector &operator=(const Vector &vec);
         Vector &operator=(const Point &point);
+        //float operator[](int value) const;
+        float& operator[](int value);
         float operator[](int value) const;
         Vector operator-();
         float dot(const Vector &vec);

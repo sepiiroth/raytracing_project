@@ -115,7 +115,7 @@ Vector &Vector::operator=(const Point &point) {
 }
 
 
-float Vector::operator[](int value) const{
+/*float Vector::operator[](int value) const{
     switch(value) {
         case 0:
             return this->m_x;
@@ -131,6 +131,38 @@ float Vector::operator[](int value) const{
             return -1;
             break;
     }
+}*/
+
+float &Vector::operator[](int value) {
+    if(value < 3) {
+        switch(value) {
+        case 0:
+            return this->m_x;
+            break;
+        case 1:
+            return this->m_y;
+            break;
+        case 2:
+            return this->m_z;
+            break;
+        }
+    } else throw std::out_of_range("invalid value");
+}
+
+float Vector::operator[](int value) const {
+    if(value < 3) {
+        switch(value) {
+        case 0:
+            return this->m_x;
+            break;
+        case 1:
+            return this->m_y;
+            break;
+        case 2:
+            return this->m_z;
+            break;
+        }
+    } else throw std::out_of_range("invalid value");
 }
 
 Vector Vector::operator-() {

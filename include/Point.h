@@ -1,5 +1,7 @@
 #ifndef POINT_H
 #define POINT_H
+#include <iostream>
+#include <stdexcept>
 
 class Point {
     private:
@@ -22,6 +24,7 @@ class Point {
         Point operator/(float value);
         Point &operator/=(float value);
         Point &operator=(const Point &p);
+        float& operator[](int value);
         float operator[](int value) const;
         Point operator-();
         float dot(const Point &p);

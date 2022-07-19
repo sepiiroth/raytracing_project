@@ -93,7 +93,38 @@ Point &Point::operator=(const Point &p) {
     return *this;
 }
 
+float &Point::operator[](int value) {
+    if(value < 3) {
+        switch(value) {
+        case 0:
+            return this->m_x;
+            break;
+        case 1:
+            return this->m_y;
+            break;
+        case 2:
+            return this->m_z;
+            break;
+        }
+    } else throw std::out_of_range("invalid value");
+}
+
 float Point::operator[](int value) const{
+    if(value < 3) {
+        switch(value) {
+        case 0:
+            return this->m_x;
+            break;
+        case 1:
+            return this->m_y;
+            break;
+        case 2:
+            return this->m_z;
+            break;
+        }
+    } else throw std::out_of_range("invalid value");
+}
+/*float Point::operator[](int value) const{
     switch(value) {
         case 0:
             return this->m_x;
@@ -109,7 +140,7 @@ float Point::operator[](int value) const{
             return -1;
             break;
     }
-}
+}*/
 
 Point Point::operator-() {
     return Point(-(this->m_x), -(this->m_y), -(this->m_z));

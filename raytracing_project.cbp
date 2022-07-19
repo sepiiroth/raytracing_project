@@ -52,6 +52,8 @@
 		</Linker>
 		<Unit filename="include/Application.h" />
 		<Unit filename="include/Camera.h" />
+		<Unit filename="include/Cube.h" />
+		<Unit filename="include/Cylinder.h" />
 		<Unit filename="include/Entity.h" />
 		<Unit filename="include/HPoint.h" />
 		<Unit filename="include/HRay.h" />
@@ -63,10 +65,14 @@
 		<Unit filename="include/Point.h" />
 		<Unit filename="include/Ray.h" />
 		<Unit filename="include/Scene.h" />
+		<Unit filename="include/Sphere.h" />
+		<Unit filename="include/Square.h" />
 		<Unit filename="include/Vector.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Application.cpp" />
 		<Unit filename="src/Camera.cpp" />
+		<Unit filename="src/Cube.cpp" />
+		<Unit filename="src/Cylinder.cpp" />
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/HPoint.cpp" />
 		<Unit filename="src/HRay.cpp" />
@@ -78,6 +84,8 @@
 		<Unit filename="src/Point.cpp" />
 		<Unit filename="src/Ray.cpp" />
 		<Unit filename="src/Scene.cpp" />
+		<Unit filename="src/Sphere.cpp" />
+		<Unit filename="src/Square.cpp" />
 		<Unit filename="src/Vector.cpp" />
 		<Extensions />
 	</Project>
