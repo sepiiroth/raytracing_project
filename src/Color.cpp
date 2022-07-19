@@ -60,4 +60,17 @@ Color &Color::operator+=(const Color &c) {
     return *this;
 }
 
+Color &Color::operator*(float value)
+{
+    *this *= value;
+}
+
+Color &Color::operator*=(float value)
+{
+    this->rgb[0] *= value;
+    this->rgb[1] *= value;
+    this->rgb[2] *= value;
+    return *this;
+}
+
 
