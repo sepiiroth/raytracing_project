@@ -101,17 +101,11 @@ Point Matrix::operator*(HPoint p) const{
             for (int k = 0; k < 4; k++) {
                 num += (*this)(j, k) * p[k];
             }
-            switch(j) {
-                case 0:
-                    point.setX(num);
-                    break;
-                case 1:
-                    point.setY(num);
-                    break;
-                case 2:
-                    point.setZ(num);
-                    break;
+            if(j < 3)
+            {
+                point[j] = num;
             }
+
         }
     }
     return point;

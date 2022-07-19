@@ -1,7 +1,7 @@
 #include "Camera.h"
 
 Camera::Camera() {
-    this->focal = 5;
+    this->focal = 10;
 }
 
 Ray Camera::getRay(float x, float y) const {

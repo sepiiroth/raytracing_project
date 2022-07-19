@@ -4,13 +4,15 @@
 #include "Ray.h"
 #include "Vector.h"
 #include "Color.h"
+#include "Entity.h"
 
 using namespace std;
 
-class Light {
+class Light : public Entity{
     private:
     public:
         Color id, is;
+        Light();
         Ray getRayToLight(const Point& p)const;
         Ray getRayFromLight(const Point& p)const;
         Vector getVectorToLight(const Point& p)const;

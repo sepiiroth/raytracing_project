@@ -65,7 +65,7 @@ Vector &Vector::operator+=(const Vector &vec) {
     return *this;
 }
 
-Vector Vector::operator-(const Vector &vec) {
+const Vector Vector::operator-(const Vector &vec) {
     return Vector(this->m_x - vec.getX(), this->m_y - vec.getY(), this->m_z - vec.getZ());
 }
 
@@ -165,7 +165,7 @@ float Vector::operator[](int value) const {
     } else throw std::out_of_range("invalid value");
 }
 
-Vector Vector::operator-() {
+Vector Vector::operator-() const{
     return Vector(-(this->m_x), -(this->m_y), -(this->m_z));
 }
 
@@ -184,8 +184,10 @@ float Vector::square() {
 }
 
 Vector Vector::normalized() {
-    assert(norm()!=0);
-    *this/=norm();
+    if(norm() > 0)
+    {
+        *this/=norm();
+    }
     return *this;
 }
 

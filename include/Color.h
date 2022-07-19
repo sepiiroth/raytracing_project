@@ -14,7 +14,7 @@ class Color
         virtual ~Color();
 
         float operator[](int value) const;
-        Color* mul(const Color& c) const;
+        Color mul(const Color& c) const;
 
         Color operator+(const Color &c);
         Color &operator+=(const Color &c);

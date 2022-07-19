@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Camera.h"
 #include "Scene.h"
+#include "Utils.h"
 
 class Application
 {

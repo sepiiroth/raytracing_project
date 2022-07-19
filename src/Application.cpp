@@ -85,17 +85,20 @@ void Application::prepareScene()
             Ray ray = camera->getRay(x / this->screen_width, y/this->screen_height);
             Point impact;
             auto inter = scene->objects[0]->intersect(ray, impact);
-
+            //impact.display();
             if(inter)
             {
-                SDL_SetRenderDrawColor(this->renderer, 255,0,0, 255 );
+
+                Object o = *(scene->objects[0]);
+                Color c = getImpactColor(ray, o, impact, *scene);
+
+                SDL_SetRenderDrawColor(this->renderer, c[0] * 255, c[1] * 255, c[2] * 255, 255 );
             }else{
-                SDL_SetRenderDrawColor(this->renderer, 96, 128, 255, 255);
+                SDL_SetRenderDrawColor(this->renderer, scene->getBackground()[0] * 255, scene->getBackground()[1] * 255, scene->getBackground()[2] * 255, 255);
             }
             SDL_RenderDrawPoint(this->renderer, x, y);
         }
     }
-
 }
 
 void Application::presentScene()

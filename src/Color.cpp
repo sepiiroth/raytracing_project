@@ -9,20 +9,30 @@ Color::Color()
 
 Color::Color(float r, float g, float b)
 {
-    if(r < 0.0f || r > 1.0f)
+    if(r < 0.0f)
     {
-        cout << "La composante R doit être comprise entre 0 et 1 (inclus)\n";
-        exit(-1);
+        r = 0.0f;
     }
-    if(g < 0.0f || g > 1.0f)
+    if(g < 0.0f)
     {
-        cout << "La composante G doit être comprise entre 0 et 1 (inclus)\n";
-        exit(-1);
+        g = 0.0f;
     }
-    if(b < 0.0f || b > 1.0f)
+    if(b < 0.0f)
     {
-        cout << "La composante B doit être comprise entre 0 et 1 (inclus)\n";
-        exit(-1);
+        b = 0.0f;
+    }
+
+    if(r > 1.0f)
+    {
+        r = 1.0f;
+    }
+    if(g > 1.0f)
+    {
+        g = 1.0f;
+    }
+    if(b > 1.0f)
+    {
+        b = 1.0f;
     }
 
     this->rgb[0] = r;
@@ -40,13 +50,13 @@ float Color::operator[](int value) const
     return rgb[value];
 }
 
-Color* Color::mul(const Color& c) const
+Color Color::mul(const Color& c) const
 {
     float r = this->rgb[0] * c[0];
     float g = this->rgb[1] * c[1];
     float b = this->rgb[2] * c[2];
 
-    return new Color(r, g, b);
+    return Color(r, g, b);
 }
 
 Color Color::operator+(const Color &c) {

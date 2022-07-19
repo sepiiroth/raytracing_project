@@ -84,7 +84,8 @@ Vector Entity::globalToLocal(const Vector v) const {
 
 Point Entity::localToGlobal(const Point& p) const {
     HPoint temp(p);
-	return transInv*temp;
+    Point point = transInv*temp;
+	return point;
 }
 
 Ray Entity::localToGlobal(const Ray& r) const {

@@ -15,6 +15,8 @@
 #include "Point.h"
 #include "Ray.h"
 
+#include "Color.h"
+
 
 using namespace std;
 
@@ -24,14 +26,14 @@ class Scene
         Scene();
         virtual ~Scene();
 
-        //Color backgroundColor;
-        //Color ambiantColor;
+        Color backgroundColor;
+        Color ambiantColor;
 
         vector<Light*> lights;
         vector<Object*> objects;
 
-      //  Color getBackground() const;
-       // Color getAmbiant() const;
+        Color getBackground() const;
+        Color getAmbiant() const;
 
         int nbLights() const;
 

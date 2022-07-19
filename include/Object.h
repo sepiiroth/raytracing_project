@@ -16,6 +16,8 @@ class Object : public Entity
         Object();
         virtual ~Object();
         Point texcoords;
+        Color color;
+        Material mat;
 
         Point getTextureCoordinates(const Point& p) const;
         Material getMaterial(const Point& p) const;

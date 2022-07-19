@@ -4,9 +4,16 @@ using namespace std;
 
 Scene::Scene()
 {
+    this->ambiantColor = Color(0.1f, 0.2f, 0.5f);
+    this->backgroundColor = Color(0.34f, 0.5f, 1.0f);
+
     this->lights = vector<Light*>();
     this->objects = vector<Object*>();
-    objects.push_back(new Square());
+    Cube *obj = new Cube();
+    //obj->rotateY(1);
+
+    objects.push_back(obj);
+    lights.push_back(new Light());
 }
 
 Scene::~Scene()
@@ -45,4 +52,15 @@ Object* Scene::closer_intersected(const Ray& ray, Point& impact) const
 
     return temp;
 
+}
+
+Color Scene::getBackground() const
+{
+    return this->backgroundColor;
+}
+
+
+Color Scene::getAmbiant() const
+{
+    return this->ambiantColor;
 }
