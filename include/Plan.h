@@ -1,6 +1,6 @@
 #ifndef PLAN_H
 #define PLAN_H
-
+#include "Object.h"
 
 class Plan : public Object {
     private:
