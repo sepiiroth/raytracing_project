@@ -66,7 +66,7 @@ int main(int argc, char **argv) {
         exit(1);
     }
 
-    Application app = Application(600, 600);
+    Application app = Application(400, 400);
 
     app.initSDL();
 

@@ -21,14 +21,15 @@ Color getImpactColor(const Ray& ray, const Object& obj, const Point& impact, con
 
 Color getImpactColorPhong(const Ray& ray, const Object& obj, const Point& impact, const Scene& scene)
 {
-    /*Vector L = scene.getLight(0)->getVectorToLight(impact);
+    Vector L = scene.getLight(0)->getVectorToLight(impact);
     Ray N = obj.getNormal(impact, ray.origin);
-    Color ka = Color(0.1f, 0.1f, 0.5f);//obj.getMaterial(impact).ka;
-    Color kd = Color(0.25f, 0.25f, 0.25f);//obj.getMaterial(impact).kd;
-    Color ks = Color(0.75f, 0.75f, 0.75f);//obj.getMaterial(impact).ks;
+    Color ka = obj.getMaterial(impact).ka;
+    Color kd = obj.getMaterial(impact).kd;
+    Color ks = obj.getMaterial(impact).ks;
 
 
-
+    //N.origin.display();
+    //N.vec.display();
     Color Id ;
     Color Is;
     for (int i = 0; i < scene.nbLights(); i++) {
@@ -38,12 +39,15 @@ Color getImpactColorPhong(const Ray& ray, const Object& obj, const Point& impact
         }
 
         Vector V = -ray.vec;
-        Vector R = 2 * L.normalized().dot(N.vec.normalized()) * N.vec.normalized() - L.normalized();
+
+        Vector step1 = N.vec.normalized() * L.normalized().dot(N.vec.normalized());
+        step1 *= 2;
+
+        Vector R = -L.normalized() +  step1 ;
         if(R.normalized().dot(V) > 0)
         {
             Is += ks.mul(scene.getLight(i)->is) * pow(R.normalized().dot(V), obj.getMaterial(impact).shininess);
         }
     }
-
-    return ka.mul(scene.getAmbiant()) + Id + Is ;*/
+    return ka.mul(scene.getAmbiant()) + Id + Is ;
 }

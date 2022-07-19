@@ -2,8 +2,8 @@
 
 Light::Light()
 {
-    this->id = Color(0.8, 0.8, 0.8);
-    this->is = Color(0.8, 0.8, 0.8);
+    this->id = Color(0.5, 0.5, 0.5);
+    this->is = Color(0.2, 0.2, 0.2);
 }
 
 Ray Light::getRayToLight(const Point& p)const {
@@ -19,7 +19,7 @@ Ray Light::getRayFromLight(const Point& p)const {
 }
 
 Vector Light::getVectorToLight(const Point& p)const {
-    Vector vec = Point(-p);
+    Vector vec = Point(0,0,0) - p;
 
     return vec.normalized();
 }

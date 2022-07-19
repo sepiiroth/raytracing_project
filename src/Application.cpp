@@ -90,7 +90,7 @@ void Application::prepareScene()
             {
 
                 Object o = *(scene->objects[0]);
-                Color c = getImpactColor(ray, o, impact, *scene);
+                Color c = getImpactColorPhong(ray, o, impact, *scene);
 
                 SDL_SetRenderDrawColor(this->renderer, c[0] * 255, c[1] * 255, c[2] * 255, 255 );
             }else{

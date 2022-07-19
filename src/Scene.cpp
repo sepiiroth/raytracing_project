@@ -12,7 +12,7 @@ Scene::Scene()
     this->objects = vector<Object*>();
     Sphere *obj = new Sphere();
     obj->translate(1,0,1.5f);
-    obj->rotateX(1);
+    //obj->rotateY(1);
 
     objects.push_back(obj);
     lights.push_back(new Light());
