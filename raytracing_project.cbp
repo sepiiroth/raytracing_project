@@ -59,6 +59,7 @@
 		<Unit filename="include/Light.h" />
 		<Unit filename="include/Matrix.h" />
 		<Unit filename="include/Object.h" />
+		<Unit filename="include/Plan.h" />
 		<Unit filename="include/Point.h" />
 		<Unit filename="include/Ray.h" />
 		<Unit filename="include/Scene.h" />
@@ -73,6 +74,7 @@
 		<Unit filename="src/Light.cpp" />
 		<Unit filename="src/Matrix.cpp" />
 		<Unit filename="src/Object.cpp" />
+		<Unit filename="src/Plan.cpp" />
 		<Unit filename="src/Point.cpp" />
 		<Unit filename="src/Ray.cpp" />
 		<Unit filename="src/Scene.cpp" />

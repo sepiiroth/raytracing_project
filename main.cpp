@@ -50,14 +50,15 @@ int main(int argc, char **argv) {
 	m1(3, 1) = 0;
 	m1(3, 2) = 0;
 	m1(3, 3) = 1;
-	HVector vec(1, 2, 3);
+	/*Vector vec(1, 2, 3);
     Matrix result = m1.inverse();
     for(int i = 0; i < 4; i++) {
         for(int j = 0; j < 4; j++) {
             printf("%f ", result(i, j));
         }
         printf("\n");
-    }
+    }*/
+
 
     if ( SDL_Init(SDL_INIT_VIDEO) < 0 )
     {
@@ -83,6 +84,5 @@ int main(int argc, char **argv) {
 
     atexit(SDL_Quit);
 
-    cout << "Tets";
     return 0;
 }

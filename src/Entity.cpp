@@ -20,7 +20,7 @@ void Entity::translate(float x, float y, float z){
 		m(1 ,3) = y;
 		m(2, 3) = z;
 		trans = m*trans;
-		//transInv = trans.inverse();
+		transInv = trans.inverse();
 }
 
 void Entity::rotateX(float deg){
@@ -31,7 +31,7 @@ void Entity::rotateX(float deg){
 	m(2, 1) = sin(deg);
 	m(2, 2) = cos(deg);
 	trans = m*trans;
-	//transInv = trans.inverse();
+	transInv = trans.inverse();
 }
 
 void Entity::rotateY(float deg){
@@ -42,7 +42,7 @@ void Entity::rotateY(float deg){
 	m(2, 0) = -sin(deg);
 	m(2, 2) = cos(deg);
 	trans = m*trans;
-	//transInv = trans.inverse();
+	transInv = trans.inverse();
 }
 
 void Entity::rotateZ(float deg){
@@ -53,7 +53,7 @@ void Entity::rotateZ(float deg){
 	m(1, 1) = cos(deg);
 	m(2, 2) = 1;
 	trans = m*trans;
-	//transInv = trans.inverse();
+	transInv = trans.inverse();
 }
 
 void Entity::scale(float factor){
@@ -62,41 +62,37 @@ void Entity::scale(float factor){
 	m(1 ,1) = factor;
 	m(2, 2) = factor;
 	trans = m*trans;
-	//transInv = trans.inverse();
+	transInv = trans.inverse();
 }
 
-Point Entity::globalToLocal(const Point& p) const
-{
+Point Entity::globalToLocal(const Point& p) const {
     HPoint temp(p);
     Point point = this->trans * temp;
-    cout << "\n" << point[0] << ", " << point[1] << ", " << point[2] << endl;
 	return point;
 }
 
-Ray Entity::globalToLocal(const Ray& r) const{
+Ray Entity::globalToLocal(const Ray& r) const {
     HRay temp(r);
   	return Ray(trans*temp.origin, trans*temp.vec);
 
 }
 
-Vector Entity::globalToLocal(const Vector v) const{
+Vector Entity::globalToLocal(const Vector v) const {
     HVector temp(v);
 	return trans*temp;
 }
 
-Point Entity::localToGlobal(const Point& p) const{
+Point Entity::localToGlobal(const Point& p) const {
     HPoint temp(p);
 	return transInv*temp;
 }
 
-Ray Entity::localToGlobal(const Ray& r) const{
+Ray Entity::localToGlobal(const Ray& r) const {
     HRay temp(r);
-
   	return Ray(transInv*temp.origin, transInv*temp.vec);
-
 }
 
-Vector Entity::localToGlobal(const Vector v) const{
+Vector Entity::localToGlobal(const Vector v) const {
     HVector temp(v);
 	return transInv*temp;
 }

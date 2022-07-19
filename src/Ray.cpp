@@ -21,3 +21,8 @@ Vector Ray::getVector() const
 {
     return this->vec;
 }
+
+Ray Ray::normalized() {
+    this->vec = this->vec.normalized();
+    return (*this);
+}

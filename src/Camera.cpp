@@ -9,6 +9,5 @@ Ray Camera::getRay(float x, float y) const {
 	Point foc(0, 0, focal);
 	r.vec = (r.origin - foc);
 	r = localToGlobal(r);
-	r.vec = r.vec.normalized();
-	return r;
+	return r.normalized();
 }

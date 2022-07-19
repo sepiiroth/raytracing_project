@@ -10,8 +10,8 @@
 
 class Entity {
     private:
-        Matrix transInv, trans;
     public:
+        Matrix transInv, trans;
         Entity();
         void translate(float x, float y, float z);
         void rotateX(float deg);

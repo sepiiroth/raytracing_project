@@ -16,3 +16,8 @@ HRay::HRay(const Ray& r)
     this->vec = r.getVector();
 }
 
+HRay HRay::normalized() {
+    this->vec = this->vec.normalized();
+    return (*this);
+}
+
