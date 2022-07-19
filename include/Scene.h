@@ -5,6 +5,13 @@
 #include <vector>
 #include "Light.h"
 #include "Object.h"
+#include "Plan.h"
+#include "Square.h"
+#include "Sphere.h"
+#include "Cube.h"
+#include "Cylinder.h"
+
+
 #include "Point.h"
 #include "Ray.h"
 
