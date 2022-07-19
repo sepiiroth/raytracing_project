@@ -52,32 +52,38 @@
 		</Linker>
 		<Unit filename="include/Application.h" />
 		<Unit filename="include/Camera.h" />
+		<Unit filename="include/Color.h" />
 		<Unit filename="include/Entity.h" />
 		<Unit filename="include/HPoint.h" />
 		<Unit filename="include/HRay.h" />
 		<Unit filename="include/HVector.h" />
 		<Unit filename="include/Light.h" />
+		<Unit filename="include/Material.h" />
 		<Unit filename="include/Matrix.h" />
 		<Unit filename="include/Object.h" />
 		<Unit filename="include/Plan.h" />
 		<Unit filename="include/Point.h" />
 		<Unit filename="include/Ray.h" />
 		<Unit filename="include/Scene.h" />
+		<Unit filename="include/Utils.h" />
 		<Unit filename="include/Vector.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Application.cpp" />
 		<Unit filename="src/Camera.cpp" />
+		<Unit filename="src/Color.cpp" />
 		<Unit filename="src/Entity.cpp" />
 		<Unit filename="src/HPoint.cpp" />
 		<Unit filename="src/HRay.cpp" />
 		<Unit filename="src/HVector.cpp" />
 		<Unit filename="src/Light.cpp" />
+		<Unit filename="src/Material.cpp" />
 		<Unit filename="src/Matrix.cpp" />
 		<Unit filename="src/Object.cpp" />
 		<Unit filename="src/Plan.cpp" />
 		<Unit filename="src/Point.cpp" />
 		<Unit filename="src/Ray.cpp" />
 		<Unit filename="src/Scene.cpp" />
+		<Unit filename="src/Utils.cpp" />
 		<Unit filename="src/Vector.cpp" />
 		<Extensions />
 	</Project>
