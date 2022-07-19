@@ -216,7 +216,7 @@
 	<math.h>
 	<assert.h>
 
-1658226362 source:g:\cours\cpp\raytracing_project\src\matrix.cpp
+1658242034 source:g:\cours\cpp\raytracing_project\src\matrix.cpp
 	"Matrix.h"
 
 1658222392 source:g:\cours\cpp\raytracing_project\src\point.cpp
@@ -601,7 +601,7 @@
 	"Scene.h"
 	"Utils.h"
 
-1658237913 source:g:\cours\cpp\raytracing_project\src\light.cpp
+1658242369 source:g:\cours\cpp\raytracing_project\src\light.cpp
 	"../include/Light.h"
 
 1658236596 g:\cours\cpp\raytracing_project\include\light.h
@@ -625,7 +625,7 @@
 	"Entity.h"
 	"Material.h"
 
-1658238688 source:g:\cours\cpp\raytracing_project\src\scene.cpp
+1658242385 source:g:\cours\cpp\raytracing_project\src\scene.cpp
 	"../include/Scene.h"
 
 1658234051 g:\cours\cpp\raytracing_project\include\scene.h
@@ -1135,7 +1135,7 @@
 	"Object.h"
 	<math.h>
 
-1658238621 source:g:\cours\cpp\raytracing_project\src\sphere.cpp
+1658242477 source:g:\cours\cpp\raytracing_project\src\sphere.cpp
 	"Sphere.h"
 
 1658226031 g:\cours\cpp\raytracing_project\include\sphere.h

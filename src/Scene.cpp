@@ -1,5 +1,6 @@
 #include "../include/Scene.h"
 
+
 using namespace std;
 
 Scene::Scene()
@@ -9,8 +10,9 @@ Scene::Scene()
 
     this->lights = vector<Light*>();
     this->objects = vector<Object*>();
-    Cube *obj = new Cube();
-    //obj->rotateY(1);
+    Sphere *obj = new Sphere();
+    obj->translate(1,0,1.5f);
+    obj->rotateX(1);
 
     objects.push_back(obj);
     lights.push_back(new Light());

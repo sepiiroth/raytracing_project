@@ -10,6 +10,10 @@ Matrix::Matrix() {
             m_tab[i*m_cols+j] = 0;
         }
     }
+    m_tab[0*m_cols+0] = 1;
+    m_tab[1*m_cols+1] = 1;
+    m_tab[2*m_cols+2] = 1;
+    m_tab[3*m_cols+3] = 1;
 }
 
 Matrix::Matrix(int l_num, int c_num, float remp) {
@@ -217,6 +221,14 @@ Matrix Matrix::inverse() {
     ret(3, 2) = det * -((*this)(0, 0) * A1213 - (*this)(0, 1) * A0213 + (*this)(0, 2) * A0113);
     ret(3, 3) = det * ((*this)(0, 0) * A1212 - (*this)(0, 1) * A0212 + (*this)(0, 2) * A0112);
 
+    for(int i = 0; i < 4; i++)
+    {
+        for(int j = 0; j < 4; j++)
+        {
+            cout << (*this)(i,j) << " ";
+        }
+        cout << endl;
+    }
     return ret;
 }
 

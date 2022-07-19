@@ -19,7 +19,7 @@ Ray Light::getRayFromLight(const Point& p)const {
 }
 
 Vector Light::getVectorToLight(const Point& p)const {
-    Vector vec = globalToLocal(Point(-p));
+    Vector vec = Point(-p);
 
     return vec.normalized();
 }
