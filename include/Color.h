@@ -18,6 +18,8 @@ class Color
 
         Color operator+(const Color &c);
         Color &operator+=(const Color &c);
+        Color &operator*(float value);
+        Color &operator*=(float value);
 
 };
 
