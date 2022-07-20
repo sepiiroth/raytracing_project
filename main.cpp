@@ -70,9 +70,10 @@ int main(int argc, char **argv) {
 
     app.initSDL();
 
+    app.prepareScene();
+	app.image.save("image.jpg");
 	while (1)
 	{
-		app.prepareScene();
 
 		app.doInput();
 
@@ -80,6 +81,7 @@ int main(int argc, char **argv) {
 
 		SDL_Delay(16);
 	}
+
 
 
     atexit(SDL_Quit);

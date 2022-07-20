@@ -11,10 +11,10 @@ Scene::Scene()
     this->lights = vector<Light*>();
     this->objects = vector<Object*>();
     Sphere *obj = new Sphere();
-    obj->translate(1,0,5.f);
+    obj->translate(1,0,10.f);
     obj->rotateY(1);
     obj->scale(1);
-    //objects.push_back(obj);
+    objects.push_back(obj);
     Plan *obj2 = new Plan();
     obj2->translate(0,-2,0);
     obj2->rotateX(90*M_PI/180);

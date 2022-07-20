@@ -5,6 +5,7 @@
 #include "Camera.h"
 #include "Scene.h"
 #include "Utils.h"
+#include "Image.h"
 
 class Application
 {
@@ -15,7 +16,7 @@ class Application
 
         SDL_Renderer *renderer;
         SDL_Window *window;
-        int index = 0;
+        Image image;
 
         Camera *camera;
         Scene *scene;
