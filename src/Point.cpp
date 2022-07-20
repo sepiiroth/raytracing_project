@@ -158,3 +158,12 @@ float Point::distanceTo(const Point& B)
 void Point::display() {
     cout<<this->m_x<<" "<<this->m_y<<" "<<this->m_z<<endl;
 }
+
+float Point::norm()
+{
+    return sqrt(square());
+}
+
+float Point::square() {
+    return this->m_x * this->m_x + this->m_y * this->m_y + this->m_z * this->m_z;
+}

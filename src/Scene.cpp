@@ -11,10 +11,14 @@ Scene::Scene()
     this->lights = vector<Light*>();
     this->objects = vector<Object*>();
     Sphere *obj = new Sphere();
-    obj->translate(1,0,1.5f);
+    obj->translate(0,0,5.f);
     //obj->rotateY(1);
-
+    obj->scale(1);
+    Plan *obj2 = new Plan();
+    obj2->translate(0,0,10.5f);
+    obj2->rotateX(45*M_PI/180);
     objects.push_back(obj);
+    objects.push_back(obj2);
     lights.push_back(new Light());
 }
 
@@ -48,6 +52,7 @@ Object* Scene::closer_intersected(const Ray& ray, Point& impact) const
             {
                 minDistance = tempDistance;
                 temp = this->objects[i];
+                impact = impactTemp;
             }
         }
     }

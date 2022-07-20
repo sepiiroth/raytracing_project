@@ -22,7 +22,10 @@ Color getImpactColor(const Ray& ray, const Object& obj, const Point& impact, con
 Color getImpactColorPhong(const Ray& ray, const Object& obj, const Point& impact, const Scene& scene)
 {
     Vector L = scene.getLight(0)->getVectorToLight(impact);
+    Point i = impact;
+    //i.display();
     Ray N = obj.getNormal(impact, ray.origin);
+    //N = Ray(impact, Vector(0,0,1));
     Color ka = obj.getMaterial(impact).ka;
     Color kd = obj.getMaterial(impact).kd;
     Color ks = obj.getMaterial(impact).ks;

@@ -221,14 +221,6 @@ Matrix Matrix::inverse() {
     ret(3, 2) = det * -((*this)(0, 0) * A1213 - (*this)(0, 1) * A0213 + (*this)(0, 2) * A0113);
     ret(3, 3) = det * ((*this)(0, 0) * A1212 - (*this)(0, 1) * A0212 + (*this)(0, 2) * A0112);
 
-    for(int i = 0; i < 4; i++)
-    {
-        for(int j = 0; j < 4; j++)
-        {
-            cout << (*this)(i,j) << " ";
-        }
-        cout << endl;
-    }
     return ret;
 }
 

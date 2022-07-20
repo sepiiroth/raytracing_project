@@ -3,7 +3,7 @@
 Material::Material()
 {
     this->kd = Color(0.25, 0.25, 0.75);
-    this->ks = Color(0.1, 0.1, 0.5);
+    this->ka = Color(0.1, 0.1, 0.5);
     this->ks = Color(0.75, 0.75, 0.75);
     this->shininess = 0.0f;
 }

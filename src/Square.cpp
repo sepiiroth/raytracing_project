@@ -8,4 +8,5 @@ Square::Square()
     this->trans(1, 1) = 2;
     this->trans(2, 2) = 2;
     this->transInv = this->trans.inverse();
+
 }

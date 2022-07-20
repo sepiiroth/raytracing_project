@@ -31,16 +31,10 @@ class Sphere : public virtual Object {
         }
 
         virtual Ray getNormal(const Point& p, const Point& o)const {
-            Vector v(globalToLocal(p)[0], globalToLocal(p)[1], globalToLocal(p)[2]);
-            v.display();
-            if(globalToLocal(o)[0] < 1 && globalToLocal(o)[1] < 1 && globalToLocal(o)[2] < 1) {
-                Ray r(p, -v.normalized());
-                return r;
-
-            } else {
-                Ray r(p, v.normalized());
-                return r;
-            }
+            Point lp = globalToLocal(p);
+            Point lo = globalToLocal(o);
+            if((lo-Point(0,0,0)).norm()<1)return localToGlobal(Ray(lp,-lp)).normalized();
+            return localToGlobal(Ray(lp,lp)).normalized();
         }
     protected:
 

@@ -15,6 +15,7 @@ class Application
 
         SDL_Renderer *renderer;
         SDL_Window *window;
+        int index = 0;
 
         Camera *camera;
         Scene *scene;

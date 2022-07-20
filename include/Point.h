@@ -30,6 +30,8 @@ class Point {
         float dot(const Point &p);
         float distanceTo(const Point& B);
         void display();
+        float norm();
+        float square();
 };
 
 #endif // POINT_H
