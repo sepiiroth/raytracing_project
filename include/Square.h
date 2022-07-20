@@ -5,6 +5,8 @@
 class Square : public virtual Object {
     public:
         Square();
+        Square(Point origin, float scale, TextureMode textureMode);
+
         virtual bool intersect(const Ray& ray, Point& impact) const {
             Ray lr = globalToLocal(ray).normalized();
             if(lr.vec[2]<0.0001 && lr.vec[2]>-0.0001)return false;

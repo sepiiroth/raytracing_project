@@ -5,28 +5,31 @@ using namespace std;
 
 Scene::Scene()
 {
-    //this->ambiantColor = Color(0.1f, 0.2f, 0.5f);
     this->ambiantColor = Color(0,0,0);
-    //this->backgroundColor = Color(0.34f, 0.5f, 1.0f);
     this->backgroundColor = Color(0.1,0.1,0.1);
 
     this->lights = vector<Light*>();
     this->objects = vector<Object*>();
-    Sphere *obj = new Sphere();
-    obj->translate(1,0,10.f);
+
+    //Sphere
+    Sphere *obj = new Sphere(Point(1.f,0,10.f), 1, TextureMode::Ligne);
+    cout << obj->trans(2,3);
     obj->rotateY(1);
-    obj->scale(1);
     objects.push_back(obj);
+
+    //Plan
     Plan *obj2 = new Plan();
     obj2->translate(0,-2,0);
     obj2->rotateX(90*M_PI/180);
     obj2->scale(-8);
     objects.push_back(obj2);
-    Square *obj3 = new Square();
-    obj3->translate(0,0,3.f);
+
+    //Square
+    Square *obj3 = new Square(Point(0,0,3), 1, TextureMode::Ligne);
     obj3->rotateY(-1);
-    obj3->scale(1);
     objects.push_back(obj3);
+
+    //Light
     lights.push_back(new Light());
 }
 

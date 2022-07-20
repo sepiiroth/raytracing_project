@@ -11,15 +11,18 @@
 #include "Material.h"
 #include <math.h>
 
+enum class TextureMode { Monochrome = 0, Damier = 1, Ligne = 2 };
+
 class Object : public Entity
 {
     public:
         Object();
+        Object(Point origin, float scale, TextureMode textureMode, Material material);
         virtual ~Object();
-        Point texcoords;
-        Color color;
+
         Material mat;
         Material* texture;
+        TextureMode textureMode;
 
         //Point getTextureCoordinates(const Point& p) const;
         Material getMaterial(const Point& p) const;

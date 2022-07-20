@@ -106,6 +106,7 @@ void Application::prepareScene()
             image(x, y, 2) = c[2] * 255;
             image(x, y, 3) = 255;
             SDL_RenderDrawPoint(this->renderer, x, y);
+            //presentScene();
         }
     }
 }

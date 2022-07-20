@@ -80,7 +80,7 @@
 	"Application.h"
 	<SDL2/SDL.h>
 
-1658323862 source:g:\cours\cpp\raytracing_project\main.cpp
+1658346950 source:g:\cours\cpp\raytracing_project\main.cpp
 	<stdlib.h>
 	<stdio.h>
 	<iostream>
@@ -591,7 +591,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1658323816 source:g:\cours\cpp\raytracing_project\src\application.cpp
+1658346896 source:g:\cours\cpp\raytracing_project\src\application.cpp
 	"../include/Application.h"
 
 1658323224 g:\cours\cpp\raytracing_project\include\application.h
@@ -612,10 +612,10 @@
 	"Color.h"
 	"Entity.h"
 
-1658328048 source:g:\cours\cpp\raytracing_project\src\object.cpp
+1658348041 source:g:\cours\cpp\raytracing_project\src\object.cpp
 	"../include/Object.h"
 
-1658326058 g:\cours\cpp\raytracing_project\include\object.h
+1658348024 g:\cours\cpp\raytracing_project\include\object.h
 	"Point.h"
 	"HPoint.h"
 	"Ray.h"
@@ -627,7 +627,7 @@
 	"Material.h"
 	<math.h>
 
-1658326450 source:g:\cours\cpp\raytracing_project\src\scene.cpp
+1658347805 source:g:\cours\cpp\raytracing_project\src\scene.cpp
 	"../include/Scene.h"
 
 1658234051 g:\cours\cpp\raytracing_project\include\scene.h
@@ -1137,17 +1137,17 @@
 	"Object.h"
 	<math.h>
 
-1658242477 source:g:\cours\cpp\raytracing_project\src\sphere.cpp
+1658348497 source:g:\cours\cpp\raytracing_project\src\sphere.cpp
 	"Sphere.h"
 
-1658324921 g:\cours\cpp\raytracing_project\include\sphere.h
+1658348222 g:\cours\cpp\raytracing_project\include\sphere.h
 	"Object.h"
 	<math.h>
 
-1658326830 source:g:\cours\cpp\raytracing_project\src\square.cpp
+1658348110 source:g:\cours\cpp\raytracing_project\src\square.cpp
 	"Square.h"
 
-1658327312 g:\cours\cpp\raytracing_project\include\square.h
+1658346683 g:\cours\cpp\raytracing_project\include\square.h
 	"Object.h"
 
 1658326222 source:g:\cours\cpp\raytracing_project\src\utils.cpp

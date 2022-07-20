@@ -1,13 +1,38 @@
 #include "Sphere.h"
 
 Sphere::Sphere()
+:Object(Point(0,0,0), 2, TextureMode::Monochrome, Material())
 {
-    this->texcoords = Point();
-    this->color = Color(0.5, 0.1, 0.1);
-    this->trans(0, 3) = 0;
-    this->trans(2, 3) = 0;
-    this->trans(0, 0) = 1;
-    this->trans(1, 1) = 1;
-    this->trans(2, 2) = 1;
-    this->transInv = this->trans.inverse();
+}
+
+Sphere::Sphere(Point origin, float scale, TextureMode textureMode)
+:Object(origin, scale, textureMode, Material())
+{
+
+}
+
+Material Sphere::getMaterial(const Point& p) const
+{
+    Material m;
+    Point tP;
+    int i;
+    switch(this->textureMode)
+    {
+        case TextureMode::Monochrome:
+            return this->mat;
+            break;
+        case TextureMode::Ligne:
+            tP = getTextureCoordinates(p);
+            i = int(tP[1] * 10) * 10 + int(tP[0] * 10);
+            m = texture[i];
+            return m;
+            break;
+        default:
+            tP = getTextureCoordinates(p);
+            i = int(tP[0] * 10) * 10 + int(tP[1] * 10);
+            m = texture[i];
+            return m;
+            break;
+    }
+
 }

@@ -6,6 +6,9 @@
 class Sphere : public virtual Object {
     public:
         Sphere();
+        Sphere(Point origin, float scale, TextureMode textureMode);
+
+        Material getMaterial(const Point& p) const;
 
         virtual Ray getNormal(const Point& p, const Point& o) const {
             Point lp = globalToLocal(p);
