@@ -82,6 +82,6 @@ void getShadow(const Ray& ray, const Object* obj, const Point& impact, const Sce
     auto inter = scene.closer_intersected(rayTemp, impactTemp);
     if(inter != obj)
     {
-        color = Color(0,0,0);
+        color = Color(color[0]/2,color[1]/2,color[2]/2);
     }
 }

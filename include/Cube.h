@@ -44,6 +44,31 @@ class Cube : public virtual Object {
                 return localToGlobal(Ray(lp,-v)).normalized();
             return localToGlobal(Ray(lp,v)).normalized();
         }
+
+        Point getTextureCoordinates(const Point& p)const{
+            Point temp(globalToLocal(p));
+            float x, y;
+
+            if(temp[2] > .999f || temp[2] < -.999f)
+            {
+                x = temp[0]/2 + .5f;
+                y = temp[1]/2 + .5f;
+            }
+
+            if(temp[0] > .999f || temp[0] < -.999f)
+            {
+                x = temp[2]/2 + .5f;
+                y = temp[1]/2 + .5f;
+            }
+
+            if(temp[1] > .999f || temp[1] < -.999f)
+            {
+                x = temp[0]/2 + .5f;
+                y = temp[2]/2 + .5f;
+            }
+
+            return Point(x, y, 0);
+        }
     protected:
 
     private:

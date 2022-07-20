@@ -38,6 +38,16 @@ class Sphere : public virtual Object {
             return true;
         };
 
+        virtual Point getTextureCoordinates(const Point& p)const{
+            Point temp(globalToLocal(p));
+            float phi = atan2(-temp[1], temp[0]);
+            float theta = acos(temp[2]);
+            float x = (phi/(2*M_PI)) + .5f;
+            float y = theta/M_PI;
+
+            return Point(x, y, 0);
+        }
+
 
     protected:
 

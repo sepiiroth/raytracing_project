@@ -5,8 +5,10 @@ using namespace std;
 
 Scene::Scene()
 {
-    this->ambiantColor = Color(0.1f, 0.2f, 0.5f);
-    this->backgroundColor = Color(0.34f, 0.5f, 1.0f);
+    //this->ambiantColor = Color(0.1f, 0.2f, 0.5f);
+    this->ambiantColor = Color(0,0,0);
+    //this->backgroundColor = Color(0.34f, 0.5f, 1.0f);
+    this->backgroundColor = Color(0.1,0.1,0.1);
 
     this->lights = vector<Light*>();
     this->objects = vector<Object*>();
@@ -22,7 +24,7 @@ Scene::Scene()
     objects.push_back(obj2);
     Square *obj3 = new Square();
     obj3->translate(0,0,3.f);
-    //obj3->rotateY(-1);
+    obj3->rotateY(-1);
     obj3->scale(1);
     objects.push_back(obj3);
     lights.push_back(new Light());

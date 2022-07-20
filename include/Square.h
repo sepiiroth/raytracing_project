@@ -17,6 +17,14 @@ class Square : public virtual Object {
             return true;
         }
 
+        virtual Point getTextureCoordinates(const Point& p)const{
+            float x = globalToLocal(p)[0]/2 + .5f;
+            float y = globalToLocal(p)[1]/2 + .5f;
+            Point point = Point(x, y, 0);
+            //point.display();
+            return point;
+        }
+
     protected:
 
     private:

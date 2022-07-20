@@ -80,7 +80,7 @@
 	"Application.h"
 	<SDL2/SDL.h>
 
-1658323391 source:g:\cours\cpp\raytracing_project\main.cpp
+1658323862 source:g:\cours\cpp\raytracing_project\main.cpp
 	<stdlib.h>
 	<stdio.h>
 	<iostream>
@@ -612,10 +612,10 @@
 	"Color.h"
 	"Entity.h"
 
-1658238725 source:g:\cours\cpp\raytracing_project\src\object.cpp
+1658328048 source:g:\cours\cpp\raytracing_project\src\object.cpp
 	"../include/Object.h"
 
-1658313285 g:\cours\cpp\raytracing_project\include\object.h
+1658326058 g:\cours\cpp\raytracing_project\include\object.h
 	"Point.h"
 	"HPoint.h"
 	"Ray.h"
@@ -625,8 +625,9 @@
 	"Matrix.h"
 	"Entity.h"
 	"Material.h"
+	<math.h>
 
-1658322551 source:g:\cours\cpp\raytracing_project\src\scene.cpp
+1658326450 source:g:\cours\cpp\raytracing_project\src\scene.cpp
 	"../include/Scene.h"
 
 1658234051 g:\cours\cpp\raytracing_project\include\scene.h
@@ -1085,7 +1086,7 @@
 1658310167 source:g:\cours\cpp\raytracing_project\src\plan.cpp
 	"Plan.h"
 
-1658313047 g:\cours\cpp\raytracing_project\include\plan.h
+1658324697 g:\cours\cpp\raytracing_project\include\plan.h
 	"Object.h"
 
 1658233696 source:g:\cours\cpp\raytracing_project\src\color.cpp
@@ -1125,7 +1126,7 @@
 1658314338 source:g:\cours\cpp\raytracing_project\src\cube.cpp
 	"Cube.h"
 
-1658314253 g:\cours\cpp\raytracing_project\include\cube.h
+1658324994 g:\cours\cpp\raytracing_project\include\cube.h
 	"Object.h"
 	<math.h>
 
@@ -1139,17 +1140,17 @@
 1658242477 source:g:\cours\cpp\raytracing_project\src\sphere.cpp
 	"Sphere.h"
 
-1658315226 g:\cours\cpp\raytracing_project\include\sphere.h
+1658324921 g:\cours\cpp\raytracing_project\include\sphere.h
 	"Object.h"
 	<math.h>
 
-1658314318 source:g:\cours\cpp\raytracing_project\src\square.cpp
+1658326830 source:g:\cours\cpp\raytracing_project\src\square.cpp
 	"Square.h"
 
-1658223406 g:\cours\cpp\raytracing_project\include\square.h
+1658327312 g:\cours\cpp\raytracing_project\include\square.h
 	"Object.h"
 
-1658315918 source:g:\cours\cpp\raytracing_project\src\utils.cpp
+1658326222 source:g:\cours\cpp\raytracing_project\src\utils.cpp
 	"../include/Utils.h"
 
 1658315870 g:\cours\cpp\raytracing_project\include\utils.h
