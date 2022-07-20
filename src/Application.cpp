@@ -92,8 +92,9 @@ void Application::prepareScene()
             if(inter)
             {
                 //impact.display();
-                Object o = *(inter);
-                Color c = getImpactColor(ray, o, impact, *scene);
+                Object* o = inter;
+                Color c = getImpactColorPhong(ray, o, impact, *scene);
+                getShadow(ray, o, impact, *scene, c);
                 //exit(-1);
 
                 SDL_SetRenderDrawColor(this->renderer, c[0] * 255, c[1] * 255, c[2] * 255, 255 );
@@ -103,10 +104,6 @@ void Application::prepareScene()
             SDL_RenderDrawPoint(this->renderer, x, y);
         }
     }
-
-    index++;
-    scene->objects[0]->rotateY((this->index%360) * M_PI / 180);
-
 }
 
 void Application::presentScene()

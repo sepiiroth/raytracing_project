@@ -12,6 +12,7 @@ class Light : public Entity{
     private:
     public:
         Color id, is;
+        Point origin;
         Light();
         Ray getRayToLight(const Point& p)const;
         Ray getRayFromLight(const Point& p)const;

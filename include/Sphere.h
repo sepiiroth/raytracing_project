@@ -6,6 +6,14 @@
 class Sphere : public virtual Object {
     public:
         Sphere();
+
+        virtual Ray getNormal(const Point& p, const Point& o) const {
+            Point lp = globalToLocal(p);
+            Point lo = globalToLocal(o);
+            if((lo-Point(0,0,0)).norm()<1)return localToGlobal(Ray(lp,-lp)).normalized();
+            return localToGlobal(Ray(lp,lp)).normalized();
+        };
+
         virtual bool intersect(const Ray& ray, Point& impact) const {
             Ray r = globalToLocal(ray).normalized();
             float a = r.vec.dot(r.vec);
@@ -28,14 +36,9 @@ class Sphere : public virtual Object {
             Point p(r.origin[0]+v[0], r.origin[1]+v[1], r.origin[2]+v[2]);
             impact = localToGlobal(p);
             return true;
-        }
+        };
 
-        virtual Ray getNormal(const Point& p, const Point& o)const {
-            Point lp = globalToLocal(p);
-            Point lo = globalToLocal(o);
-            if((lo-Point(0,0,0)).norm()<1)return localToGlobal(Ray(lp,-lp)).normalized();
-            return localToGlobal(Ray(lp,lp)).normalized();
-        }
+
     protected:
 
     private:

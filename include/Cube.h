@@ -31,24 +31,18 @@ class Cube : public virtual Object {
         }
 
         virtual Ray getNormal(const Point& p, const Point& o)const {
-            Vector v(globalToLocal(p));
-
-            for(int i = 0; i < 3; i++) {
-                if(v[i] > 0.999 && v[i] < 1.001) {
-                    v[i] = 1;
-                } else if(v[i] < -0.999 && v[i] > -1.001){
-                    v[i] = -1;
-                } else {
-                    v[i] = 0;
-                }
-            }
-
-            if(globalToLocal(o)[0] < 1 && globalToLocal(o)[1] < 1 && globalToLocal(o)[2] < 1) {
-                v = -v;
-            }
-
-            Ray r(p, localToGlobal(v));
-            return r.normalized();
+            Point lp = globalToLocal(p);
+            Point lo = globalToLocal(o);
+            Vector v(0,0,0);
+            if(lp[0]>0.999)v[0]=1.0;
+            else if(lp[0]<-0.999)v[0]=-1.0;
+            else if(lp[1]>0.999)v[1]=1.0;
+            else if(lp[1]<-0.999)v[1]=-1.0;
+            else if(lp[2]>0.999)v[2]=1.0;
+            else if(lp[2]<-0.999)v[2]=-1.0;
+            if(lo[0]<1 && lo[0]>-1 && lo[1]<1 && lo[1]>-1 && lo[2]<1 && lo[2]>-1)
+                return localToGlobal(Ray(lp,-v)).normalized();
+            return localToGlobal(Ray(lp,v)).normalized();
         }
     protected:
 
