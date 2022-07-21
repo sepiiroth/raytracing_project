@@ -31,6 +31,7 @@ class Vector {
         float& operator[](int value);
         float operator[](int value) const;
         Vector operator-() const;
+        Vector cross(const Vector& v1);
         float dot(const Vector &vec);
         float norm();
         Vector normalized();

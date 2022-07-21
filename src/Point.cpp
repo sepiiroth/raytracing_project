@@ -167,3 +167,11 @@ float Point::norm()
 float Point::square() {
     return this->m_x * this->m_x + this->m_y * this->m_y + this->m_z * this->m_z;
 }
+
+Point Point::cross(const Point &v)
+{
+	float Nx = (this->m_y * v[2]) - (this->m_z * v[1]);
+	float Ny = (this->m_z * v[0]) - (this->m_x * v[2]);
+	float Nz = (this->m_x * v[1]) - (this->m_y * v[0]);
+	return Point(Nx, Ny, Nz);
+}

@@ -32,6 +32,7 @@ class Point {
         void display();
         float norm();
         float square();
+        Point cross(const Point &v);
 };
 
 #endif // POINT_H
