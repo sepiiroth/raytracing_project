@@ -1,6 +1,6 @@
 #include<stdlib.h>
 #include<stdio.h>
-#include<iostream>
+#include <iostream>
 #include<math.h>
 #include"Point.h"
 #include"Vector.h"
@@ -15,6 +15,12 @@
 using namespace std;
 
 int main(int argc, char **argv) {
+    if(argc < 4)
+    {
+        cout << "Pas assez d'arguments";
+        return -1;
+    }
+
     Matrix m;
 	m(0, 0) = -1;
 	m(0 ,1) = 0;
@@ -66,12 +72,12 @@ int main(int argc, char **argv) {
         exit(1);
     }
 
-    Application app = Application(600, 600);
+    Application app = Application(argv[1], argv[2], stoi(argv[3]));
 
     app.initSDL();
 
     app.prepareScene();
-	app.image.save("image.jpg");
+	app.image.save();
 	while (1)
 	{
 

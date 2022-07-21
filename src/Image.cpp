@@ -26,6 +26,7 @@ Image::Image()
     this->pixels = (uint8_t*) malloc(0*0*4);
     this->width = 0;
     this->height = 0;
+    this->imageName = "image.jpg";
 }
 
 Image::Image(int height, int width)
@@ -33,7 +34,17 @@ Image::Image(int height, int width)
     this->pixels = (uint8_t*) malloc(width*height*4);
     this->width = width;
     this->height = height;
+    this->imageName = "image.jpg";
 }
+
+Image::Image(int height, int width, const char* filename)
+{
+    this->pixels = (uint8_t*) malloc(width*height*4);
+    this->width = width;
+    this->height = height;
+    this->imageName = filename;
+}
+
 
 int Image::getWidth() const
 {
@@ -54,9 +65,9 @@ uint8_t& Image::operator() (int x, int y, int color){
     return this->pixels[( x + y * this->width) * 4 + color];
 }
 
-void const Image::save(const char* filename) const
+void const Image::save() const
 {
-    stbi_write_png(filename, this->getWidth(), this->getHeight(), 4, this->getPixels(), this->getWidth()*4);
+    stbi_write_png(this->imageName, this->getWidth(), this->getHeight(), 4, this->getPixels(), this->getWidth()*4);
 }
 
 Image::~Image()

@@ -25,10 +25,14 @@ class Scene
 {
     public:
         Scene();
+        Scene(Color backgroundColor, Color ambiantColor, bool shadows);
+        Scene(Color backgroundColor, Color ambiantColor, bool shadows, vector<Light*> lights, vector<Object*> objects);
         virtual ~Scene();
 
         Color backgroundColor;
         Color ambiantColor;
+
+        bool hasShadows;
 
         vector<Light*> lights;
         vector<Object*> objects;

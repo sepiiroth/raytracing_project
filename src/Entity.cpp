@@ -7,11 +7,7 @@ Entity::Entity() {
     trans(1,1) = 1.f;
     trans(2,2) = 1.f;
     trans(3,3) = 1.f;
-    this->transInv = Matrix(4,4);
-    transInv(0,0) = 1.f;
-    transInv(1,1) = 1.f;
-    transInv(2,2) = 1.f;
-    transInv(3,3) = 1.f;
+    this->transInv = trans.inverse();
 }
 
 void Entity::translate(float x, float y, float z){
