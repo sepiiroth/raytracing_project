@@ -19,12 +19,15 @@ class Image
         //Image(string filename);
         Image();
         Image(int height, int width);
+        Image(int height, int width, const char* filename);
+
+        const char* imageName;
         int getWidth() const;
         int getHeight() const;
         uint8_t* getPixels() const;
         virtual ~Image();
         uint8_t& operator() (int x, int y, int color);
-        void const save(const char* filename) const;
+        void const save() const;
 
     protected:
 

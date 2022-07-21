@@ -2,10 +2,7 @@
 
 Object::Object()
 {
-    this->trans(2, 3) = 0;
-    this->trans(0, 0) = 1;
-    this->trans(1, 1) = 1;
-    this->trans(2, 2) = 1;
+    this->trans = Matrix();
     this->transInv = this->trans.inverse();
     this->mat = Material();
     this->textureMode = TextureMode::Monochrome;
@@ -13,12 +10,14 @@ Object::Object()
 
 Object::Object(Point origin, float scale, TextureMode textureMode, Material material)
 {
+    this->trans = Matrix();
     this->trans(0, 3) = origin[0];
     this->trans(1, 3) = origin[1];
     this->trans(2, 3) = origin[2];
     this->trans(0, 0) = scale;
     this->trans(1, 1) = scale;
     this->trans(2, 2) = scale;
+    this->transInv = this->trans.inverse();
     int m_rows = 10;
     int m_cols = 10;
     texture = new Material[m_rows*m_cols];

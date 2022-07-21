@@ -6,7 +6,10 @@
 class Cube : public virtual Object {
     public:
         Cube();
+        Cube(Point origin, float scale, TextureMode textureMode);
+
         float interSide(const Ray& r, int dim, float offset) const;
+
         virtual bool intersect(const Ray& ray, Point& impact) const {
             Ray r = globalToLocal(ray).normalized();
             float mint = -1;
@@ -45,7 +48,7 @@ class Cube : public virtual Object {
             return localToGlobal(Ray(lp,v)).normalized();
         }
 
-        Point getTextureCoordinates(const Point& p)const{
+        virtual Point getTextureCoordinates(const Point& p)const{
             Point temp(globalToLocal(p));
             float x, y;
 

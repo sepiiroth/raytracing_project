@@ -7,6 +7,7 @@ Scene::Scene()
 {
     this->ambiantColor = Color(0,0,0);
     this->backgroundColor = Color(0.1,0.1,0.1);
+    this->hasShadows = true;
 
     this->lights = vector<Light*>();
     this->objects = vector<Object*>();
@@ -31,6 +32,48 @@ Scene::Scene()
 
     //Light
     lights.push_back(new Light());
+}
+
+
+Scene::Scene(Color backgroundColor, Color ambiantColor, bool shadows)
+{
+    this->ambiantColor = ambiantColor;
+    this->backgroundColor = backgroundColor;
+    this->hasShadows = shadows;
+
+    this->lights = vector<Light*>();
+    this->objects = vector<Object*>();
+
+    //Sphere
+    Sphere *obj = new Sphere(Point(1.f,0,10.f), 1, TextureMode::Ligne);
+    obj->rotateY(1);
+    objects.push_back(obj);
+
+    //Plan
+    Plan *obj2 = new Plan();
+    obj2->translate(0,-2,0);
+    obj2->rotateX(90*M_PI/180);
+    obj2->scale(-8);
+    objects.push_back(obj2);
+
+    //Square
+    Cube *obj3 = new Cube(Point(0,0,10.f), 1, TextureMode::Damier);
+    //obj3->rotateY(0);
+    objects.push_back(obj3);
+
+    //Light
+    lights.push_back(new Light());
+}
+
+
+Scene::Scene(Color backgroundColor, Color ambiantColor, bool shadows, vector<Light*> lights, vector<Object*> objects)
+{
+    this->ambiantColor = ambiantColor;
+    this->backgroundColor = backgroundColor;
+    this->hasShadows = shadows;
+
+    this->lights = lights;
+    this->objects = objects;
 }
 
 Scene::~Scene()

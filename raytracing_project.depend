@@ -80,7 +80,7 @@
 	"Application.h"
 	<SDL2/SDL.h>
 
-1658346950 source:g:\cours\cpp\raytracing_project\main.cpp
+1658393221 source:g:\cours\cpp\raytracing_project\main.cpp
 	<stdlib.h>
 	<stdio.h>
 	<iostream>
@@ -591,18 +591,19 @@
 	"begin_code.h"
 	"close_code.h"
 
-1658346896 source:g:\cours\cpp\raytracing_project\src\application.cpp
+1658393536 source:g:\cours\cpp\raytracing_project\src\application.cpp
 	"../include/Application.h"
 
-1658323224 g:\cours\cpp\raytracing_project\include\application.h
+1658392330 g:\cours\cpp\raytracing_project\include\application.h
 	<SDL2/SDL.h>
 	<iostream>
+	<fstream>
 	"Camera.h"
 	"Scene.h"
 	"Utils.h"
 	"Image.h"
 
-1658322700 source:g:\cours\cpp\raytracing_project\src\light.cpp
+1658394270 source:g:\cours\cpp\raytracing_project\src\light.cpp
 	"../include/Light.h"
 
 1658318821 g:\cours\cpp\raytracing_project\include\light.h
@@ -612,7 +613,7 @@
 	"Color.h"
 	"Entity.h"
 
-1658348041 source:g:\cours\cpp\raytracing_project\src\object.cpp
+1658394853 source:g:\cours\cpp\raytracing_project\src\object.cpp
 	"../include/Object.h"
 
 1658348024 g:\cours\cpp\raytracing_project\include\object.h
@@ -627,10 +628,10 @@
 	"Material.h"
 	<math.h>
 
-1658347805 source:g:\cours\cpp\raytracing_project\src\scene.cpp
+1658394382 source:g:\cours\cpp\raytracing_project\src\scene.cpp
 	"../include/Scene.h"
 
-1658234051 g:\cours\cpp\raytracing_project\include\scene.h
+1658391952 g:\cours\cpp\raytracing_project\include\scene.h
 	<math.h>
 	<limits.h>
 	<vector>
@@ -1123,10 +1124,10 @@
 	"Point.h"
 	"Scene.h"
 
-1658314338 source:g:\cours\cpp\raytracing_project\src\cube.cpp
+1658394949 source:g:\cours\cpp\raytracing_project\src\cube.cpp
 	"Cube.h"
 
-1658324994 g:\cours\cpp\raytracing_project\include\cube.h
+1658394508 g:\cours\cpp\raytracing_project\include\cube.h
 	"Object.h"
 	<math.h>
 
@@ -1150,7 +1151,7 @@
 1658346683 g:\cours\cpp\raytracing_project\include\square.h
 	"Object.h"
 
-1658326222 source:g:\cours\cpp\raytracing_project\src\utils.cpp
+1658348550 source:g:\cours\cpp\raytracing_project\src\utils.cpp
 	"../include/Utils.h"
 
 1658315870 g:\cours\cpp\raytracing_project\include\utils.h
@@ -1163,7 +1164,7 @@
 	"Point.h"
 	"Scene.h"
 
-1658323288 source:g:\cours\cpp\raytracing_project\src\image.cpp
+1658392497 source:g:\cours\cpp\raytracing_project\src\image.cpp
 	"../include/Image.h"
 	<vector>
 	<string>
@@ -1171,7 +1172,7 @@
 	"../lib/stb/stb_image_write.h"
 	<bits/stdc++.h>
 
-1658323257 g:\cours\cpp\raytracing_project\include\image.h
+1658392485 g:\cours\cpp\raytracing_project\include\image.h
 	<vector>
 	<string>
 

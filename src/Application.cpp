@@ -7,6 +7,10 @@ Application::Application()
     this->camera = new Camera();
     this->scene = new Scene();
     this->image = Image(600,600);
+
+    cout << "Taille de la scène : 600x600" << endl;
+    cout << "Ombre : Activé" << endl;
+    cout << "Image de sortie : image.jpg" << endl;
 }
 
 Application::Application(int w, int h)
@@ -16,6 +20,47 @@ Application::Application(int w, int h)
     this->camera = new Camera();
     this->scene = new Scene();
     this->image = Image(h,w);
+
+    cout << "Taille de la scène : " << h << "x" << w << endl;
+    cout << "Ombre : Activé" << endl;
+    cout << "Image de sortie : image.jpg" << endl;
+}
+
+Application::Application(const char* inputName)
+{
+    ifstream sceneFile(inputName);
+    if (!sceneFile) {
+        printf("Fichier scene non existante !");
+        exit(-1);
+    }
+    sceneFile >> this->screen_width >> this->screen_height;
+    this->camera = new Camera();
+    this->scene = new Scene();
+    this->image = Image(this->screen_height,this->screen_width);
+
+    cout << "Taille de la scène : " << this->screen_height << "x" << this->screen_width << endl;
+    cout << "Ombre : Activé" << endl;
+    cout << "Image de sortie : image.jpg" << endl;
+}
+
+Application::Application(const char* inputName, const char* imageName, bool hasShadows)
+{
+    ifstream sceneFile(inputName);
+    if (!sceneFile) {
+        printf("Fichier scene non existante !");
+        exit(-1);
+    }
+    sceneFile >> this->screen_width >> this->screen_height;
+    this->camera = new Camera();
+    this->scene = new Scene(Color(0.1,0.1,0.1), Color(0,0,0), hasShadows);
+    this->image = Image(this->screen_height,this->screen_width, imageName);
+
+    auto sO = "Activé";
+    if(!hasShadows)
+        sO = "Désactivé";
+    cout << "Taille de la scène : " << this->screen_height << "x" << this->screen_width << endl;
+    cout << "Ombre : " << sO << endl;
+    cout << "Image de sortie : " << imageName << endl;
 }
 
 Application::~Application()
@@ -94,7 +139,9 @@ void Application::prepareScene()
                 //impact.display();
                 Object* o = inter;
                 c = getImpactColorPhong(ray, o, impact, *scene);
-                getShadow(ray, o, impact, *scene, c);
+
+                if(scene->hasShadows)
+                    getShadow(ray, o, impact, *scene, c);
                 //exit(-1);
                 SDL_SetRenderDrawColor(this->renderer, c[0] * 255, c[1] * 255, c[2] * 255, 255 );
             }else{
