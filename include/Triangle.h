@@ -3,43 +3,56 @@
 #include "Object.h"
 #include <iostream>
 #include <math.h>
-constexpr float kEpsilon = 1e-8;
+const float EPSILON = 0.0000001;
 
 class Triangle : public virtual Object {
     public:
         Point A;
         Point B;
         Point C;
-        Vector N;
 
         Triangle(Point p1, Point p2, Point p3);
         virtual bool intersect(const Ray& ray, Point& impact) const {
             Ray r = globalToLocal(ray).normalized();
-            float  a = A[0]-B[0],     d = A[0]-C[0],     g = r.vec[0],
-                   b = A[1]-B[1],     e = A[1]-C[1],     h = r.vec[1],
-                   c = A[2]-B[2],     f = A[2]-C[2],     i = r.vec[2],
-                   j = A[0]-r.origin[0],   k = A[1]-r.origin[1],   l = A[2]-r.origin[2];
+            Point ABis = this->A;
+            Point BBis = this->B;
+            Point CBis = this->C;
+            Point edge1, edge2, h, s, q;
+            float a,f,u,v;
+            edge1 = BBis - ABis;
+            edge2 = CBis - ABis;
+            Vector cr = r.vec.cross(Vector(edge2[0], edge2[1], edge2[2]));
+            h = Point(cr[0], cr[1], cr[2]);
 
-            float M, W, Y, t;
+            a = edge1.dot(h);
+            if (a > -EPSILON && a < EPSILON)
+                return false;    // Le rayon est parallèle au triangle.
 
-            M = a*(e*i - h*f)   +  b*(g*f - d*i)  +  c*(d*h - e*g);
-            W = (j*(e*i - h*f)  +  k*(g*f - d*i)  +  l*(d*h - e*g))  / M;
-            Y = (i*(a*k - j*b)  +  h*(j*c - a*l)  +  g*(b*l - k*c))  / M;
-            t = (f*(a*k - j*b)  +  e*(j*c - a*l)  +  d*(b*l - k*c))  / M;
-
-
-            if (Y<0 || Y>1) {
-              return false;
+            f = 1.0/a;
+            s = r.origin - ABis;
+            u = (s.dot(h)) * f;
+            if (u < 0.0 || u > 1.0) {
+                return false;
+            }
+            q = s.cross(edge1);
+            //Vector cr1 = r.vec.dot(Vector(q[0], q[1], q[2]));
+            v = r.vec.dot(Vector(q[0], q[1], q[2])) * f;
+            if (v < 0.0 || u + v > 1.0) {
+                return false;
             }
 
-            if (W<0 || W>1-Y) {
-              return false;
+            // On calcule t pour savoir ou le point d'intersection se situe sur la ligne.
+            float t = edge2.dot(q) * f;
+            if (t > EPSILON) // Intersection avec le rayon
+            {
+                Vector v = r.vec * t;
+                Point p(r.origin[0]+v[0], r.origin[1]+v[1], r.origin[2]+v[2]);
+                impact = localToGlobal(p);
+                return true;
             }
-
-            Vector v = r.vec * t;
-            Point p(r.origin[0]+v[0], r.origin[1]+v[1], r.origin[2]+v[2]);
-            impact = localToGlobal(p);
-            return true;
+            else {
+                return false;
+                    }// On a bien une intersection de droite, mais pas de rayon.
         }
 
         virtual Ray getNormal(const Point& p, const Point& o) const {
