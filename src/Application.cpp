@@ -6,7 +6,7 @@ Application::Application()
     this->screen_height = 600;
     this->camera = new Camera();
     this->scene = new Scene();
-    this->index = 0;
+    this->image = Image(600,600);
 }
 
 Application::Application(int w, int h)
@@ -15,7 +15,7 @@ Application::Application(int w, int h)
     this->screen_height = h;
     this->camera = new Camera();
     this->scene = new Scene();
-    this->index = 0;
+    this->image = Image(h,w);
 }
 
 Application::~Application()
@@ -88,20 +88,25 @@ void Application::prepareScene()
             Point impact;
             auto inter = /*scene->objects[0]->intersect(ray, impact);*/ scene->closer_intersected(ray, impact);
 
-
+            Color c;
             if(inter)
             {
                 //impact.display();
                 Object* o = inter;
-                Color c = getImpactColorPhong(ray, o, impact, *scene);
+                c = getImpactColorPhong(ray, o, impact, *scene);
                 getShadow(ray, o, impact, *scene, c);
                 //exit(-1);
-
                 SDL_SetRenderDrawColor(this->renderer, c[0] * 255, c[1] * 255, c[2] * 255, 255 );
             }else{
+                c = Color(scene->getBackground()[0], scene->getBackground()[1],scene->getBackground()[2]);
                 SDL_SetRenderDrawColor(this->renderer, scene->getBackground()[0] * 255, scene->getBackground()[1] * 255, scene->getBackground()[2] * 255, 255);
             }
+            image(x, y, 0) = c[0] * 255;
+            image(x, y, 1) = c[1] * 255;
+            image(x, y, 2) = c[2] * 255;
+            image(x, y, 3) = 255;
             SDL_RenderDrawPoint(this->renderer, x, y);
+            //presentScene();
         }
     }
 }

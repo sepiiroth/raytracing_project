@@ -5,8 +5,8 @@ using namespace std;
 
 Scene::Scene()
 {
-    this->ambiantColor = Color(0.1f, 0.2f, 0.5f);
-    this->backgroundColor = Color(0.34f, 0.5f, 1.0f);
+    this->ambiantColor = Color(0,0,0);
+    this->backgroundColor = Color(0.1,0.1,0.1);
 
     this->lights = vector<Light*>();
     this->objects = vector<Object*>();
@@ -20,6 +20,15 @@ Scene::Scene()
     obj1->scale(1);
     objects.push_back(obj1);
     /*Plan *obj2 = new Plan();
+
+    //Sphere
+    Sphere *obj = new Sphere(Point(1.f,0,10.f), 1, TextureMode::Ligne);
+    cout << obj->trans(2,3);
+    obj->rotateY(1);
+    objects.push_back(obj);
+
+    //Plan
+    Plan *obj2 = new Plan();
     obj2->translate(0,-2,0);
     obj2->rotateX(90*M_PI/180);
     obj2->scale(-8);
@@ -29,6 +38,13 @@ Scene::Scene()
     //obj3->rotateY(-1);
     obj3->scale(1);
     objects.push_back(obj3);*/
+
+    //Square
+    Square *obj3 = new Square(Point(0,0,3), 1, TextureMode::Ligne);
+    obj3->rotateY(-1);
+    objects.push_back(obj3);
+
+    //Light
     lights.push_back(new Light());
 }
 

@@ -9,17 +9,22 @@
 #include "Matrix.h"
 #include "Entity.h"
 #include "Material.h"
+#include <math.h>
+
+enum class TextureMode { Monochrome = 0, Damier = 1, Ligne = 2 };
 
 class Object : public Entity
 {
     public:
         Object();
+        Object(Point origin, float scale, TextureMode textureMode, Material material);
         virtual ~Object();
-        Point texcoords;
-        Color color;
-        Material mat;
 
-        Point getTextureCoordinates(const Point& p) const;
+        Material mat;
+        Material* texture;
+        TextureMode textureMode;
+
+        //Point getTextureCoordinates(const Point& p) const;
         Material getMaterial(const Point& p) const;
         virtual bool intersect(const Ray& ray, Point& impact) const {
             Ray lr = globalToLocal(ray);
@@ -39,6 +44,15 @@ class Object : public Entity
             float z = 1;
             if(lo[2]<0)z=-1;
             return localToGlobal(Ray(lp,Vector(0,0,z))).normalized();
+        }
+
+        virtual Point getTextureCoordinates(const Point& p)const{
+            Point temp(globalToLocal(p));
+
+            float x = temp[0] - floor(temp[0]);
+            float y = temp[1] - floor(temp[1]);
+
+            return Point(x, y, 0);
         }
     protected:
 

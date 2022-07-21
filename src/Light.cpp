@@ -4,7 +4,7 @@ Light::Light()
 {
     this->id = Color(0.5, 0.5, 0.5);
     this->is = Color(0.2, 0.2, 0.2);
-    this->origin = Point(0,0,0);
+    this->origin = Point(0,-0.8,3);
 }
 
 Ray Light::getRayToLight(const Point& p)const {

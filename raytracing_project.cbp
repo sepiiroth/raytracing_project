@@ -59,6 +59,7 @@
 		<Unit filename="include/HPoint.h" />
 		<Unit filename="include/HRay.h" />
 		<Unit filename="include/HVector.h" />
+		<Unit filename="include/Image.h" />
 		<Unit filename="include/Light.h" />
 		<Unit filename="include/Material.h" />
 		<Unit filename="include/Matrix.h" />
@@ -82,6 +83,7 @@
 		<Unit filename="src/HPoint.cpp" />
 		<Unit filename="src/HRay.cpp" />
 		<Unit filename="src/HVector.cpp" />
+		<Unit filename="src/Image.cpp" />
 		<Unit filename="src/Light.cpp" />
 		<Unit filename="src/Material.cpp" />
 		<Unit filename="src/Matrix.cpp" />
