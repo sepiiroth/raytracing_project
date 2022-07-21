@@ -5,7 +5,7 @@ using namespace std;
 
 Scene::Scene()
 {
-    this->ambiantColor = Color(0,0,0);
+    this->ambiantColor = Color(1,1,1);
     this->backgroundColor = Color(0.1,0.1,0.1);
 
     this->lights = vector<Light*>();

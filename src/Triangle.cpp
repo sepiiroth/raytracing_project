@@ -6,7 +6,7 @@ Triangle::Triangle(Point p1, Point p2, Point p3) {
 	this->C = p3;
     this->N = ((B-A).cross(C-A));
 
-    this->texcoords = Point();
+    //this->texcoords = Point();
     this->trans(2, 3) = 0;
     this->trans(0, 0) = 2;
     this->trans(1, 1) = 2;
