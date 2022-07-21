@@ -5,12 +5,22 @@ using namespace std;
 
 Scene::Scene()
 {
-    this->ambiantColor = Color(0,0,0);
+    this->ambiantColor = Color(1,1,1);
     this->backgroundColor = Color(0.1,0.1,0.1);
     this->hasShadows = true;
 
     this->lights = vector<Light*>();
     this->objects = vector<Object*>();
+    Triangle *obj = new Triangle(Point(-1, 0, -15), Point(0, 1, -15), Point(1, 0, -15));
+    //obj->translate(1.f, 0, -15.f);
+    obj->rotateZ(10);
+    objects.push_back(obj);
+    /*Square *obj1 = new Square();
+    obj1->translate(1,0,5.f);
+    obj1->rotateZ(1);
+    obj1->scale(1);
+    objects.push_back(obj1);
+    /*Plan *obj2 = new Plan();
 
     //Sphere
     Sphere *obj = new Sphere(Point(1.f,0,10.f), 1, TextureMode::Ligne);
@@ -24,6 +34,11 @@ Scene::Scene()
     obj2->rotateX(90*M_PI/180);
     obj2->scale(-8);
     objects.push_back(obj2);
+    Square *obj3 = new Square();
+    obj3->translate(0,0,3.f);
+    //obj3->rotateY(-1);
+    obj3->scale(1);
+    objects.push_back(obj3);*/
 
     //Square
     Square *obj3 = new Square(Point(0,0,3), 1, TextureMode::Ligne);

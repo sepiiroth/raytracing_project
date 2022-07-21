@@ -14,7 +14,7 @@ class Sphere : public virtual Object {
             Point lp = globalToLocal(p);
             Point lo = globalToLocal(o);
             if((lo-Point(0,0,0)).norm()<1)return localToGlobal(Ray(lp,-lp)).normalized();
-            return localToGlobal(Ray(lp,lp)).normalized();
+            return localToGlobal (Ray(lp,lp)).normalized();
         };
 
         virtual bool intersect(const Ray& ray, Point& impact) const {

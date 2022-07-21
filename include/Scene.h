@@ -8,6 +8,7 @@
 #include "Plan.h"
 #include "Square.h"
 #include "Sphere.h"
+#include "Triangle.h"
 #include "Cube.h"
 #include "Cylinder.h"
 

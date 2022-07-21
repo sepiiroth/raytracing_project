@@ -191,6 +191,15 @@ Vector Vector::normalized() {
     return *this;
 }
 
+Vector Vector::cross(const Vector &v)
+{
+	float Nx = (this->m_y * v[2]) - (this->m_z * v[1]);
+	float Ny = (this->m_z * v[0]) - (this->m_x * v[2]);
+	float Nz = (this->m_x * v[1]) - (this->m_y * v[0]);
+	return Vector(Nx, Ny, Nz);
+}
+
+
 void Vector::display() {
     cout<<this->m_x<<" "<<this->m_y<<" "<<this->m_z<<endl;
 }
