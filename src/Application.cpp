@@ -185,6 +185,7 @@ void Application::doInput() {
 }
 
 void Application::prepareScene() {
+
 	SDL_SetRenderDrawColor(this->renderer, 96, 128, 255, 255);
 	SDL_RenderClear(this->renderer);
 	SDL_SetRenderDrawColor(this->renderer, 255, 128, 96, 255);
