@@ -4,9 +4,15 @@
 #include <math.h>
 
 class Sphere : public virtual Object {
+    private:
+
     public:
+        Point origin;
+        Material ma;
+        float scale;
+
         Sphere();
-        Sphere(Point origin, float scale, TextureMode textureMode);
+        Sphere(Point o, float s, TextureMode textureMode, Material m = Material());
 
         Material getMaterial(const Point& p) const;
 
@@ -14,14 +20,15 @@ class Sphere : public virtual Object {
             Point lp = globalToLocal(p);
             Point lo = globalToLocal(o);
             if((lo-Point(0,0,0)).norm()<1)return localToGlobal(Ray(lp,-lp)).normalized();
-            return localToGlobal (Ray(lp,lp)).normalized();
+            return localToGlobal(Ray(lp,lp)).normalized();
         };
 
         virtual bool intersect(const Ray& ray, Point& impact) const {
             Ray r = globalToLocal(ray).normalized();
+
             float a = r.vec.dot(r.vec);
             float b = 2*r.vec.dot(r.origin);
-            float c = r.origin.dot(r.origin)-1.0;
+            float c = r.origin.dot(r.origin) - scale*scale;
             float delta = b*b-4*a*c;
 
             if(delta < 0)return false;
@@ -50,11 +57,6 @@ class Sphere : public virtual Object {
 
             return Point(x, y, 0);
         }
-
-
-    protected:
-
-    private:
 };
 
-#endif // SPHERE_H
+#endif

@@ -2,6 +2,7 @@
 #include<iostream>
 #include<math.h>
 
+/*Initialisation*/
 Ray::Ray(float ox, float oy, float oz, float vx, float vy, float vz) {
     this->origin = Point(ox, oy, oz);
     this->vec = Vector(vx, vy, vz);
@@ -12,13 +13,12 @@ Ray::Ray(Point p, Vector v) {
     this->vec = v;
 }
 
-Point Ray::getOrigin() const
-{
+/*Calculs*/
+Point Ray::getOrigin() const {
     return this->origin;
 }
 
-Vector Ray::getVector() const
-{
+Vector Ray::getVector() const {
     return this->vec;
 }
 

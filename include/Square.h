@@ -3,9 +3,11 @@
 #include "Object.h"
 
 class Square : public virtual Object {
+    private:
+
     public:
         Square();
-        Square(Point origin, float scale, TextureMode textureMode);
+        Square(Point origin, float scale, TextureMode textureMode, Material m = Material(Color(0.5, 0.1, 0.1), Color(0.75, 0.5, 0.5), Color(0, 0, 0), 0.0f));
 
         virtual bool intersect(const Ray& ray, Point& impact) const {
             Ray lr = globalToLocal(ray).normalized();
@@ -19,17 +21,20 @@ class Square : public virtual Object {
             return true;
         }
 
-        virtual Point getTextureCoordinates(const Point& p)const{
+        Ray getNormal(const Point& p, const Point& o) const {
+            Point lp = globalToLocal(p);
+            Point lo = globalToLocal(o);
+            float z = 1;
+            if(lo[2]<0)z=-1;
+            return localToGlobal(Ray(lp,Vector(0,0,z))).normalized();
+        }
+
+        virtual Point getTextureCoordinates(const Point& p) const {
             float x = globalToLocal(p)[0]/2 + .5f;
             float y = globalToLocal(p)[1]/2 + .5f;
             Point point = Point(x, y, 0);
-            //point.display();
             return point;
         }
-
-    protected:
-
-    private:
 };
 
-#endif // SQUARE_H
+#endif

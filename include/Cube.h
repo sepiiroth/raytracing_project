@@ -4,9 +4,11 @@
 #include <math.h>
 
 class Cube : public virtual Object {
+    private:
+
     public:
         Cube();
-        Cube(Point origin, float scale, TextureMode textureMode);
+        Cube(Point origin, float scale, TextureMode textureMode, Material m = Material(Color(0.5, 0.1, 0.1), Color(0.75, 0.5, 0.5), Color(0, 0, 0), 0.0f));
 
         float interSide(const Ray& r, int dim, float offset) const;
 
@@ -72,9 +74,6 @@ class Cube : public virtual Object {
 
             return Point(x, y, 0);
         }
-    protected:
-
-    private:
 };
 
-#endif // CUBE_H
+#endif

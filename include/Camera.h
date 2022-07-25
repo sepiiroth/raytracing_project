@@ -8,7 +8,10 @@ class Camera : public Entity {
         float focal;
     public:
         Camera();
-        Ray getRay(float x, float y) const;
+        Camera(float f);
+
+        void changeFocal(float f);
+        Ray getRay(float x, float y) const; /*Permet de récupérer le rayon depuis la caméra vers un point donné*/
 };
 
-#endif // CAMERA_H
+#endif

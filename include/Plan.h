@@ -6,6 +6,7 @@ class Plan : public virtual Object {
     private:
     public:
         Plan();
+        Plan(TextureMode textureMode, Material m = Material());
         virtual bool intersect(const Ray& ray, Point& impact) const {
             Ray lr = globalToLocal(ray).normalized();
             if(lr.vec[2]<0.0001 && lr.vec[2]>-0.0001)return false;

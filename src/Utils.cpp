@@ -1,7 +1,6 @@
-#include "../include/Utils.h"
+#include "Utils.h"
 
-Color getImpactColor(const Ray& ray, const Object& obj, const Point& impact, const Scene& scene)
-{
+Color getImpactColor(const Ray& ray, const Object& obj, const Point& impact, const Scene& scene) {
     Vector L = scene.getLight(0)->getVectorToLight(impact);
 
     Ray N = obj.getNormal(impact, ray.origin);
@@ -19,8 +18,7 @@ Color getImpactColor(const Ray& ray, const Object& obj, const Point& impact, con
     return ka + Id ;
 }
 
-Color getImpactColorPhong(const Ray& ray, const Object* obj, const Point& impact, const Scene& scene)
-{
+Color getImpactColorPhong(const Ray& ray, const Object* obj, const Point& impact, const Scene& scene) {
     Material m = obj->getMaterial(impact);
     Ray normal = obj->getNormal(impact,ray.origin);
     Color c = m.ka.mul(scene.getAmbiant());
@@ -42,14 +40,12 @@ Color getImpactColorPhong(const Ray& ray, const Object* obj, const Point& impact
 }
 
 
-void getShadow(const Ray& ray, const Object* obj, const Point& impact, const Scene& scene, Color& color)
-{
+void getShadow(const Ray& ray, const Object* obj, const Point& impact, const Scene& scene, Color& color) {
     const Light* light = scene.getLight(0);
     Ray rayTemp = light->getRayFromLight(impact);
     Point impactTemp;
     auto inter = scene.closer_intersected(rayTemp, impactTemp);
-    if(inter != obj)
-    {
+    if(inter != obj) {
         color = Color(color[0]/2,color[1]/2,color[2]/2);
     }
 }

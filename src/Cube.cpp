@@ -1,14 +1,8 @@
 #include "Cube.h"
 
-Cube::Cube()
-:Object(Point(0,0,0), 2, TextureMode::Monochrome, Material(Color(0.5, 0.1, 0.1), Color(0.75, 0.5, 0.5), Color(0, 0, 0), 0.0f))
-{
-}
+Cube::Cube() : Object(Point(0,0,0), 2, TextureMode::Monochrome, Material(Color(0.5, 0.1, 0.1), Color(0.75, 0.5, 0.5), Color(0, 0, 0), 0.0f)) {}
 
-Cube::Cube(Point origin, float scale, TextureMode textureMode)
-:Object(origin, scale, textureMode, Material(Color(0.5, 0.1, 0.1), Color(0.75, 0.5, 0.5), Color(0, 0, 0), 0.0f))
-{
-}
+Cube::Cube(Point origin, float scale, TextureMode textureMode, Material m) : Object(origin, scale, textureMode, m) {}
 
 float Cube::interSide(const Ray& r, int dim, float offset)const {
     float t = -1;

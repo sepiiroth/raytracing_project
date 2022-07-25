@@ -1,38 +1,13 @@
 #ifndef POINT_H
 #define POINT_H
-#include <iostream>
-#include <stdexcept>
+#include "Vector3.h"
 
-class Point {
+class Point : public Vector3 {
     private:
-        float m_x, m_y, m_z;
-        float getX() const;
-        float getY() const;
-        float getZ() const;
     public:
         Point();
         Point(float x, float y, float z);
-        void setX(float x);
-        void setY(float y);
-        void setZ(float z);
-        Point operator+(const Point &p);
-        Point &operator+=(const Point &p);
-        Point operator-(const Point &p);
-        Point &operator-=(const Point &p);
-        Point operator*(float value);
-        Point &operator*=(float value);
-        Point operator/(float value);
-        Point &operator/=(float value);
-        Point &operator=(const Point &p);
-        float& operator[](int value);
-        float operator[](int value) const;
-        Point operator-() const;
-        float dot(const Point &p);
-        float distanceTo(const Point& B);
-        void display();
-        float norm();
-        float square();
-        Point cross(const Point &v);
+        Point(const Vector3 &vec);
 };
 
-#endif // POINT_H
+#endif

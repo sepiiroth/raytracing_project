@@ -1,6 +1,7 @@
 #include "Entity.h"
 #include <math.h>
 
+/*Initialisation*/
 Entity::Entity() {
     this->trans = Matrix(4,4);
     trans(0,0) = 1.f;
@@ -10,6 +11,7 @@ Entity::Entity() {
     this->transInv = trans.inverse();
 }
 
+/*Translation/Rotation/Scale*/
 void Entity::translate(float x, float y, float z){
 		Matrix m;
 		m(0, 3) = x;
@@ -61,6 +63,7 @@ void Entity::scale(float factor){
 	transInv = trans.inverse();
 }
 
+/*Global->Local | Local->Global*/
 Point Entity::globalToLocal(const Point& p) const {
     HPoint temp(p);
     Point point = this->trans * temp;

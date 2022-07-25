@@ -23,8 +23,7 @@ Object::Object(Point origin, float scale, TextureMode textureMode, Material mate
     texture = new Material[m_rows*m_cols];
     this->mat = material;
     this->textureMode = textureMode;
-    switch(textureMode)
-    {
+    switch(textureMode) {
         case TextureMode::Damier:
             for(int i = 0; i < m_rows; i++) {
                 for(int j = 0; j < m_cols; j++) {

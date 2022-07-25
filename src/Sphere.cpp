@@ -1,18 +1,19 @@
 #include "Sphere.h"
 
-Sphere::Sphere()
-:Object(Point(0,0,0), 2, TextureMode::Monochrome, Material())
-{
+Sphere::Sphere() : Object(Point(0,0,0), 2, TextureMode::Monochrome, Material()) {
+    this->origin = Point(0, 0, 0);
+    this->scale = 1;
+    this->ma = Material();
 }
 
-Sphere::Sphere(Point origin, float scale, TextureMode textureMode)
-:Object(origin, scale, textureMode, Material())
-{
-
+Sphere::Sphere(Point o, float s, TextureMode textureMode, Material m) : Object(o, s, textureMode, m) {
+    this->origin = o;
+    this->scale = s;
+    this->ma = m;
+    this->textureMode = textureMode;
 }
 
-Material Sphere::getMaterial(const Point& p) const
-{
+Material Sphere::getMaterial(const Point& p) const {
     Material m;
     Point tP;
     int i;

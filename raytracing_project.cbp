@@ -12,6 +12,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="scene.txt image.jpeg 1" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />
@@ -53,6 +54,7 @@
 		<Unit filename="include/Application.h" />
 		<Unit filename="include/Camera.h" />
 		<Unit filename="include/Color.h" />
+		<Unit filename="include/Cone.h" />
 		<Unit filename="include/Cube.h" />
 		<Unit filename="include/Cylinder.h" />
 		<Unit filename="include/Entity.h" />
@@ -73,10 +75,12 @@
 		<Unit filename="include/Triangle.h" />
 		<Unit filename="include/Utils.h" />
 		<Unit filename="include/Vector.h" />
+		<Unit filename="include/Vector3.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Application.cpp" />
 		<Unit filename="src/Camera.cpp" />
 		<Unit filename="src/Color.cpp" />
+		<Unit filename="src/Cone.cpp" />
 		<Unit filename="src/Cube.cpp" />
 		<Unit filename="src/Cylinder.cpp" />
 		<Unit filename="src/Entity.cpp" />
@@ -97,6 +101,7 @@
 		<Unit filename="src/Triangle.cpp" />
 		<Unit filename="src/Utils.cpp" />
 		<Unit filename="src/Vector.cpp" />
+		<Unit filename="src/Vector3.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

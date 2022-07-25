@@ -4,14 +4,22 @@
 #include <math.h>
 
 class Cylinder : public virtual Object {
+    private:
+
     public:
+        Point origin;
+        float axis1, axis2, scale;
+
         Cylinder();
+
+        Cylinder(Point o, float s, float a1, float a2, TextureMode textureMode, Material m = Material(Color(0.5, 0.1, 0.1), Color(0.75, 0.5, 0.5), Color(0, 0, 0), 0.0f));
+
         virtual bool intersect(const Ray& ray, Point& impact)const {
             Ray r = globalToLocal(ray).normalized();
 
-            float a = r.vec[0]*r.vec[0]+r.vec[2]*r.vec[2];
-            float b = 2*(r.vec[0]*r.origin[0]+r.vec[2]*r.origin[2]);
-            float c = r.origin[0]*r.origin[0]+r.origin[2]*r.origin[2]-1.0;
+            float a = r.vec[axis1]*r.vec[axis1]+r.vec[axis2]*r.vec[axis2];
+            float b = 2*(r.vec[axis1]*r.origin[axis1]+r.vec[axis2]*r.origin[axis2]);
+            float c = r.origin[axis1]*r.origin[axis1]+r.origin[axis2]*r.origin[axis2] - scale*scale;
             float delta = b*b-4*a*c;
 
             if(delta < 0)return false;
@@ -19,14 +27,13 @@ class Cylinder : public virtual Object {
             float t;
             if(delta<0.0001){
                 t = -b/(2*a);
-            } else {
+            }else{
                 t = (-b-sqrt(delta))/(2*a);
                 if(t<0)t = (-b+sqrt(delta))/(2*a);
             }
             if(t < 0)return false;
 
-            Vector v = r.vec * t;
-            Point p(r.origin[0]+v[0], r.origin[1]+v[1], r.origin[2]+v[2]);
+            Point p = r.origin + r.vec * t;
             impact = localToGlobal(p);
             return true;
         }
@@ -54,12 +61,7 @@ class Cylinder : public virtual Object {
                 v = -v;
             }
             return Ray(p, localToGlobal(v)).normalized();
-            //std::cout << v[0] << ", " << v[1] << ", " << v[2] << std::endl;
         }
-
-    protected:
-
-    private:
 };
 
-#endif // CYLINDER_H
+#endif

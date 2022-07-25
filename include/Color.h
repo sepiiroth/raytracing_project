@@ -1,28 +1,16 @@
 #ifndef COLOR_H
 #define COLOR_H
-#include <iostream>
+#include "Vector3.h"
 
-using namespace std;
-
-class Color
-{
+class Color : public Vector3 {
+    private:
+        float checkColor(float c); /*Vérifie si le float en paramètre est compris entre 0 et 1*/
     public:
-        float rgb[3];
-
         Color();
         Color(float r, float g, float b);
-        virtual ~Color();
+        Color(const Vector3 &vec);
 
-        float operator[](int value) const;
-        Color mul(const Color& c) const;
-
-        Color operator+(const Color &c);
-        Color &operator+=(const Color &c);
-        Color &operator*(float value);
-        Color &operator*=(float value);
-
+        Color mul(const Color& c) const; /*Multiplication entre deux couleurs*/
 };
 
-
-
-#endif // COLOR_H
+#endif

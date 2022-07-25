@@ -3,15 +3,19 @@
 #include "Object.h"
 #include <iostream>
 #include <math.h>
+
 const float EPSILON = 0.0000001;
 
 class Triangle : public virtual Object {
+    private:
+
     public:
         Point A;
         Point B;
         Point C;
 
-        Triangle(Point p1, Point p2, Point p3);
+        Triangle(Point p1, Point p2, Point p3, TextureMode textureMode, Material m = Material(Color(1.0, 1.0, 1.0), Color(0.0, 0.0, 0.0), Color(0, 0, 0), 0.0f));
+
         virtual bool intersect(const Ray& ray, Point& impact) const {
             Ray r = globalToLocal(ray).normalized();
             Point ABis = this->A;
@@ -52,7 +56,7 @@ class Triangle : public virtual Object {
             }
             else {
                 return false;
-                    }// On a bien une intersection de droite, mais pas de rayon.
+                    }// On a bien une intersection de droite, mais pas de rayon.*/
         }
 
         virtual Ray getNormal(const Point& p, const Point& o) const {
@@ -62,9 +66,6 @@ class Triangle : public virtual Object {
             if(lo[2]<0)z=-1;
             return localToGlobal(Ray(lp,Vector(0,0,z))).normalized();
         }
-    protected:
-
-    private:
 };
 
-#endif // TRIANGLE_H
+#endif

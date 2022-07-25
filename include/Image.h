@@ -3,7 +3,6 @@
 #include <vector>
 #include <string>
 
-
 #define RED 0
 #define GREEN 1
 #define BLUE 2
@@ -12,28 +11,23 @@
 using std::vector;
 using std::string;
 
-class Image
-{
-    public:
-        //Image(char* filename);
-        //Image(string filename);
-        Image();
-        Image(int height, int width);
-        Image(int height, int width, const char* filename);
-
-        const char* imageName;
-        int getWidth() const;
-        int getHeight() const;
-        uint8_t* getPixels() const;
-        virtual ~Image();
-        uint8_t& operator() (int x, int y, int color);
-        void const save() const;
-
-    protected:
-
+class Image {
     private:
         int width, height, bpp;
         uint8_t* pixels;
+    public:
+        const char* imageName;
+
+        Image();
+        Image(int height, int width);
+        Image(int height, int width, const char* filename);
+        virtual ~Image();
+
+        int getWidth() const;
+        int getHeight() const;
+        uint8_t* getPixels() const;
+        uint8_t& operator() (int x, int y, int color); //permet de modifier la couleur du pixel en x, y
+        void const save() const; //sauvegarde l'image
 };
 
-#endif // IMAGE_H
+#endif

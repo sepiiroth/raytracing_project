@@ -1,63 +1,53 @@
-#include "../include/Image.h"
-#include <vector>
-#include <string>
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_WRITE_IMPLEMENTATION
+
+#include "../include/Image.h"
 #include "../lib/stb/stb_image.h"
 #include "../lib/stb/stb_image_write.h"
 #include <bits/stdc++.h>
+#include <vector>
+#include <string>
 
+using namespace std;
 using std::vector;
 using std::string;
-using namespace std;
 
-/*Image::Image(char* filename)
-{
-    this->pixels = stbi_load(filename, &this->width, &this->height, &this->bpp, 4);
-}
-
-Image::Image(string filename)
-{
-    this->pixels = stbi_load(filename.c_str(), &this->width, &this->height, &this->bpp, 4);
-}*/
-
-Image::Image()
-{
+/*Initialisation*/
+Image::Image() {
     this->pixels = (uint8_t*) malloc(0*0*4);
     this->width = 0;
     this->height = 0;
     this->imageName = "image.jpg";
 }
 
-Image::Image(int height, int width)
-{
+Image::Image(int height, int width) {
     this->pixels = (uint8_t*) malloc(width*height*4);
     this->width = width;
     this->height = height;
     this->imageName = "image.jpg";
 }
 
-Image::Image(int height, int width, const char* filename)
-{
+Image::Image(int height, int width, const char* filename) {
     this->pixels = (uint8_t*) malloc(width*height*4);
     this->width = width;
     this->height = height;
     this->imageName = filename;
 }
 
+Image::~Image() {
 
-int Image::getWidth() const
-{
+}
+
+/*Calculs*/
+int Image::getWidth() const {
     return this->width;
 }
 
-int Image::getHeight() const
-{
+int Image::getHeight() const {
     return this->height;
 }
 
-uint8_t* Image::getPixels() const
-{
+uint8_t* Image::getPixels() const {
     return this->pixels;
 }
 
@@ -65,12 +55,7 @@ uint8_t& Image::operator() (int x, int y, int color){
     return this->pixels[( x + y * this->width) * 4 + color];
 }
 
-void const Image::save() const
-{
+void const Image::save() const {
     stbi_write_png(this->imageName, this->getWidth(), this->getHeight(), 4, this->getPixels(), this->getWidth()*4);
 }
 
-Image::~Image()
-{
-    //dtor
-}

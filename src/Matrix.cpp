@@ -1,6 +1,7 @@
 #include "Matrix.h"
 #define EPS 1e-10
 
+/*Initialisation*/
 Matrix::Matrix() {
     m_rows = 4;
     m_cols = 4;
@@ -38,44 +39,17 @@ Matrix::Matrix(const Matrix &m) {
     }
 }
 
-Matrix& Matrix::operator=(const Matrix& m) {
-    Matrix tmp = m;
-    swap(tmp);
-    return *this;
-}
-
-void Matrix::swap(Matrix& m) {
-    std::swap(m_rows, m.m_rows);
-    std::swap(m_cols, m.m_cols);
-    std::swap(m_tab, m.m_tab);
-}
-
-int Matrix::getCols() const {
-    return m_cols;
-}
-
-int Matrix::getRows() const {
-    return m_rows;
-}
-
-void Matrix::set(int i, int j, float val) {
-    m_tab[i*m_cols+j] = val;
-}
-
-int Matrix::get(int i, int j) const {
-    return m_tab[i*m_cols+j];
-}
-
+/*Operators*/
 float& Matrix::operator[](int index) {
+    return m_tab[index];
+}
+
+float Matrix::operator[](int index) const {
     return m_tab[index];
 }
 
 float& Matrix::operator()(int i,int j) {
     return  m_tab[j+i*m_cols];
-}
-
-float Matrix::operator[](int index) const {
-    return m_tab[index];
 }
 
 float Matrix::operator()(int i,int j) const {
@@ -105,8 +79,7 @@ Point Matrix::operator*(HPoint p) const{
             for (int k = 0; k < 4; k++) {
                 num += (*this)(j, k) * p[k];
             }
-            if(j < 3)
-            {
+            if(j < 3) {
                 point[j] = num;
             }
 
@@ -124,21 +97,43 @@ Vector Matrix::operator*(HVector v) const{
             for (int k = 0; k < 4; k++) {
                 num += (*this)(j, k) * v[k];
             }
-            switch(j) {
-                case 0:
-                    vec.setX(num);
-                    break;
-                case 1:
-                    vec.setY(num);
-                    break;
-                case 2:
-                    vec.setZ(num);
-                    break;
+            if(j < 3) {
+                vec[j] = num;
             }
         }
     }
     return vec;
 }
+
+Matrix& Matrix::operator=(const Matrix& m) {
+    Matrix tmp = m;
+    swap(tmp);
+    return *this;
+}
+
+/*Calculs*/
+void Matrix::swap(Matrix& m) {
+    std::swap(m_rows, m.m_rows);
+    std::swap(m_cols, m.m_cols);
+    std::swap(m_tab, m.m_tab);
+}
+
+int Matrix::getCols() const {
+    return m_cols;
+}
+
+int Matrix::getRows() const {
+    return m_rows;
+}
+
+void Matrix::set(int i, int j, float val) {
+    m_tab[i*m_cols+j] = val;
+}
+
+int Matrix::get(int i, int j) const {
+    return m_tab[i*m_cols+j];
+}
+
 
 float& Matrix::at(int index) {
     if(index < 0 || index >= m_rows*m_cols) {

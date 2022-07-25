@@ -6,13 +6,15 @@
 
 class HRay {
     private:
+
     public:
         HPoint origin;
         HVector vec;
+
         HRay(float ox, float oy, float oz, float vx, float vy, float vz);
         HRay(HPoint p, HVector v);
         HRay(const Ray& r);
+
         HRay normalized();
 };
-
-#endif // HRAY_H
+#endif
