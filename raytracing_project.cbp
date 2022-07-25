@@ -12,7 +12,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="scene.txt image.jpeg 1" />
+				<Option parameters="scene1.txt image.jpeg 0" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />
